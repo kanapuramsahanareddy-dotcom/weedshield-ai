@@ -260,7 +260,7 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
 
 
 # Model path and load
-MODEL_PATH = r"C:\mini project\runs\detect\runs\detect\train_full3\weights\best.pt"
+MODEL_PATH = "best.pt"
 st.sidebar.success("✓ Model Loaded Successfully")
 
 try:
