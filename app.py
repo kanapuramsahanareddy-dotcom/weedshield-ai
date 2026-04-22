@@ -195,7 +195,7 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
     y_pos -= 15
 
     c.setFont("Helvetica-Bold", 10)
-    c.drawString(40, y_pos, f"Action: {treatment_info['action']}")
+    c.drawString(40, y_pos, f"Weed: {treatment_info.get('weed_name', 'General Weed')}")
     y_pos -= 12
 
     c.setFont("Helvetica", 9)
@@ -214,14 +214,14 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
         c.drawString(50, y_pos, f"• {method}")
         y_pos -= 10
     
-    if treatment_info.get('herbicides'):
+    if treatment_info.get('all_herbicides'):
         y_pos -= 5
         c.setFont("Helvetica-Bold", 9)
         c.drawString(40, y_pos, "Recommended Herbicides:")
         y_pos -= 10
         
         c.setFont("Helvetica", 9)
-        for herbicide in treatment_info['herbicides']:
+        for herbicide in treatment_info.get('all_herbicides', []):
             c.drawString(50, y_pos, f"• {herbicide}")
             y_pos -= 10
     
@@ -446,7 +446,7 @@ if menu == 'Detect':
 
                     st.markdown(f"<div style='padding: 12px; background-color: rgba({int(severity_color[1:3], 16)}, {int(severity_color[3:5], 16)}, {int(severity_color[5:7], 16)}, 0.2); border-left: 4px solid {severity_color}; border-radius: 6px;'>", unsafe_allow_html=True)
                     st.markdown(f"**Severity Level:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info['severity']}</span>", unsafe_allow_html=True)
-                    st.markdown(f"**Confidence Range:** {treatment_info['confidence_range']}", unsafe_allow_html=True)
+                    st.markdown(f"**Confidence Range:** {treatment_info.get('urgency', 'N/A')}", unsafe_allow_html=True)
                     st.markdown(f"**Confidence Score:** {avg_weed_confidence:.1%}", unsafe_allow_html=True)
                     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -457,9 +457,9 @@ if menu == 'Detect':
                     for method in treatment_info['methods']:
                         st.markdown(f"- {method}")
 
-                    if treatment_info['herbicides']:
+                    if treatment_info.get('all_herbicides', []):
                         st.markdown("**Recommended Herbicides:**")
-                        for herbicide in treatment_info['herbicides']:
+                        for herbicide in treatment_info.get('all_herbicides', []):
                             st.markdown(f"- {herbicide}")
                     else:
                         st.markdown("**Recommended Herbicides:** None - Preventive monitoring only")
