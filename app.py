@@ -9,7 +9,7 @@ import os
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
-from recommendations import get_recommendation
+from recommendations import format_recommendation
 
 
 # Page configuration
@@ -367,7 +367,7 @@ if menu == 'Detect':
                 severity_level, severity_conf, severity_icon = calculate_severity(weed_count, weed_confidences)
                 
                 avg_weed_confidence = np.mean(weed_confidences) if weed_confidences else 0.0
-                treatment_info = get_recommendation("general_weed", avg_weed_confidence)
+                treatment_info = format_recommendation("general_weed", avg_weed_confidence)
 
                 pdf_data = generate_pdf_report(img_annotated, weed_count, wheat_count, 
                                               treatment_info['severity'], '📊',
