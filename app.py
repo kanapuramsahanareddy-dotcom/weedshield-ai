@@ -450,7 +450,7 @@ if menu == 'Detect':
                     st.markdown(f"**Confidence Score:** {avg_weed_confidence:.1%}", unsafe_allow_html=True)
                     st.markdown("</div>", unsafe_allow_html=True)
 
-                    st.markdown(f"**Action:** {treatment_info['action']}")
+                    st.markdown(f"**Action:** {treatment_info.get('action', 'Monitor field')}")
                     st.markdown(f"**Description:** {treatment_info.get('description', 'N/A')}")
 
                     st.markdown("**Recommended Methods:**")
