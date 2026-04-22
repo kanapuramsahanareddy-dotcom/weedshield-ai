@@ -1,5 +1,5 @@
-streamlit
-ultralytics
+streamlit==1.54.0
+ultralytics==8.4.14
 pillow
 numpy
 reportlab
