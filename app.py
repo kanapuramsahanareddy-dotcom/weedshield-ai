@@ -199,7 +199,7 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
     y_pos -= 12
 
     c.setFont("Helvetica", 9)
-    detail_lines = wrap_text(treatment_info['description'], 500, 9)
+    detail_lines = wrap_text(treatment_info.get('description', 'N/A'), 500, 9)
     for line in detail_lines:
         c.drawString(40, y_pos, line)
         y_pos -= 11
@@ -210,7 +210,7 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
     y_pos -= 10
 
     c.setFont("Helvetica", 9)
-    for method in treatment_info['methods']:
+    for method in treatment_info.get('methods', []):
         c.drawString(50, y_pos, f"• {method}")
         y_pos -= 10
     
@@ -370,7 +370,7 @@ if menu == 'Detect':
                 treatment_info = format_recommendation("general_weed", avg_weed_confidence)
 
                 pdf_data = generate_pdf_report(img_annotated, weed_count, wheat_count, 
-                                              treatment_info['severity'], '📊',
+                                              treatment_info.get('severity', 'LOW'), '📊',
                                               treatment_info, boxes, st.session_state['last_upload']['name'],
                                               st.session_state['last_upload']['time'], img_pil.size, t1-t0)
 
@@ -442,19 +442,19 @@ if menu == 'Detect':
                         "MEDIUM": "#FFA500",
                         "HIGH": "#FF0000"
                     }
-                    severity_color = severity_colors.get(treatment_info['severity'], "#CCCCCC")
+                    severity_color = severity_colors.get(treatment_info.get('severity', 'LOW'), "#CCCCCC")
 
                     st.markdown(f"<div style='padding: 12px; background-color: rgba({int(severity_color[1:3], 16)}, {int(severity_color[3:5], 16)}, {int(severity_color[5:7], 16)}, 0.2); border-left: 4px solid {severity_color}; border-radius: 6px;'>", unsafe_allow_html=True)
-                    st.markdown(f"**Severity Level:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info['severity']}</span>", unsafe_allow_html=True)
+                    st.markdown(f"**Severity Level:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info.get('severity', 'LOW')}</span>", unsafe_allow_html=True)
                     st.markdown(f"**Confidence Range:** {treatment_info.get('urgency', 'N/A')}", unsafe_allow_html=True)
                     st.markdown(f"**Confidence Score:** {avg_weed_confidence:.1%}", unsafe_allow_html=True)
                     st.markdown("</div>", unsafe_allow_html=True)
 
                     st.markdown(f"**Action:** {treatment_info['action']}")
-                    st.markdown(f"**Description:** {treatment_info['description']}")
+                    st.markdown(f"**Description:** {treatment_info.get('description', 'N/A')}")
 
                     st.markdown("**Recommended Methods:**")
-                    for method in treatment_info['methods']:
+                    for method in treatment_info.get('methods', []):
                         st.markdown(f"- {method}")
 
                     if treatment_info.get('all_herbicides', []):
@@ -464,8 +464,8 @@ if menu == 'Detect':
                     else:
                         st.markdown("**Recommended Herbicides:** None - Preventive monitoring only")
 
-                    st.markdown(f"**Urgency:** {treatment_info['urgency']}")
-                    st.markdown(f"**Cost Impact:** {treatment_info['cost_impact']}")
+                    st.markdown(f"**Urgency:** {treatment_info.get('urgency', 'N/A')}")
+                    st.markdown(f"**Cost Impact:** {treatment_info.get('cost_impact', 'N/A')}")
 
                 # Add to history
                 avg_conf = float(np.mean([float(b.conf[0]) for b in boxes])) * 100 if (boxes and len(boxes) > 0) else 0
