@@ -442,7 +442,7 @@ language = st.sidebar.selectbox(
 t = TRANSLATIONS[language]
 
 st.sidebar.title(t["title"])
-menu = st.sidebar.radio("Navigation", ["Home", "Detect", "Learn", "About"])
+menu = st.sidebar.radio("Navigation", ["Home", "Detect", "Learn"])
 
 
 # Session state initialization
@@ -497,7 +497,7 @@ if menu == 'Home':
 
 ### DETECT ###
 if menu == 'Detect':
-    st.markdown(f'## Detect — {t["upload"]} for analysis')
+    st.markdown(f'## {t.get("upload", "Upload Farm Image")}')
     col_left, col_right = st.columns([2,1])
 
     with col_left:
@@ -689,9 +689,3 @@ if menu == 'Learn':
         st.markdown(f"- {t['prev1']}\n- {t['prev2']}\n- {t['prev3']}")
         st.write(t['ai_benefits'])
 
-
-### ABOUT ###
-if menu == 'About':
-    st.header('About WeedShield AI')
-    st.write('Professional weed detection prototype built with YOLOv8 and Streamlit. Designed for academic presentation and practical field testing.')
-    st.markdown('**Contact:** Project repository and documentation available on request.')
