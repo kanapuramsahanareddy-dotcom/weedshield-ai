@@ -19,6 +19,18 @@ st.set_page_config(page_title="WeedShield AI — Professional Weed Detector", la
 # Professional CSS: farm theme + glassmorphism
 page_css = """
 <style>
+.stButton > button {
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0,200,83,0.3) !important;
+}
+.stButton > button:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 8px 25px rgba(0,200,83,0.6) !important;
+}
+@media (max-width: 768px) {
+    .main .block-container { padding: 1rem !important; }
+    h1 { font-size: 24px !important; }
+}
 :root{--farm-green:#2d5b3b; --farm-brown:#7a4a2b; --wheat:#d6b85a; --accent:#6fbf73; --glass: rgba(255,255,255,0.04); --glass-border: rgba(255,255,255,0.06)}
 body {color: #f3f7f2; font-family: 'Segoe UI', Roboto, Arial, sans-serif}
 [data-testid="stAppViewContainer"]{
