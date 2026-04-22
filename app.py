@@ -463,6 +463,18 @@ hr {
     gap: 20px;
 }
 
+/* Main content container - ensure visibility */
+[data-testid="stMainBlockContainer"] {
+    background: inherit !important;
+    color: #e0e0e0 !important;
+}
+
+[data-testid="stMainBlockContainer"] p,
+[data-testid="stMainBlockContainer"] span,
+[data-testid="stMainBlockContainer"] div {
+    color: #e0e0e0 !important;
+}
+
 /* Smooth all transitions */
 * {
     transition: all 0.3s ease;
@@ -685,7 +697,6 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
 
 # Model path and load
 MODEL_PATH = "best.pt"
-st.sidebar.markdown('<p style="text-align: center; margin-top: 16px; padding: 12px; background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.5); border-radius: 8px; color: #69f0ae; font-weight: 700;">✅ Model Loaded Successfully</p>', unsafe_allow_html=True)
 
 try:
     with st.spinner('Loading model (YOLOv8)...'):
@@ -697,7 +708,7 @@ except Exception as e:
 
 # Sidebar navigation
 st.sidebar.markdown('<h2 style="color: #ffd700; text-align: center; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">⚡ WEEDSHIELD AI ⚡</h2>', unsafe_allow_html=True)
-menu = st.sidebar.radio("Navigation", ["🏠 Home", "🔍 Detect", "📚 Learn", "ℹ️ About"])
+menu = st.sidebar.radio("Navigation", ["🏠 Home", "🔍 Detect", "📚 Learn"])
 
 
 # Session state initialization
@@ -959,34 +970,3 @@ if menu == 'Learn':
         st.markdown('<h2 style="color: #69f0ae;">Prevention Methods</h2>', unsafe_allow_html=True)
         st.markdown('- 🤲 Manual removal where feasible\n- 💊 Herbicide programs (selective and rotational use)\n- 🔄 Cultural practices (crop rotation, competitive cultivars)')
         st.write('AI detection benefits: fast field-scale scouting, early warning, and data-driven interventions to reduce costs and environmental impact.')
-
-
-### ABOUT ###
-if menu == 'About':
-    st.markdown('<h1 style="color: var(--bright-green); text-shadow: 0 0 15px rgba(0, 200, 83, 0.5);">ℹ️ About WeedShield AI</h1>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="glass-card" style="border: 2px solid rgba(105, 240, 174, 0.4);">', unsafe_allow_html=True)
-    st.write('🚀 Professional weed detection prototype built with **YOLOv8** and **Streamlit**.')
-    st.write('Designed for academic presentation and practical field testing.')
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<h3 style="color: #ffd700; margin-top: 24px;">🔧 Technology Stack</h3>', unsafe_allow_html=True)
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
-        st.markdown('<h4 style="color: #69f0ae; margin-top: 0;">🤖 AI Model</h4>', unsafe_allow_html=True)
-        st.markdown('YOLOv8 - State-of-the-art object detection')
-        st.markdown('</div>', unsafe_allow_html=True)
-    with col2:
-        st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
-        st.markdown('<h4 style="color: #69f0ae; margin-top: 0;">🎨 Frontend</h4>', unsafe_allow_html=True)
-        st.markdown('Streamlit - Interactive web interface')
-        st.markdown('</div>', unsafe_allow_html=True)
-    with col3:
-        st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
-        st.markdown('<h4 style="color: #69f0ae; margin-top: 0;">📊 Data</h4>', unsafe_allow_html=True)
-        st.markdown('Custom wheat & weed dataset')
-        st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('---')
-    st.markdown('**📧 Contact:** Project repository and documentation available on request.')
