@@ -379,8 +379,8 @@ if menu == 'Detect':
                 output_path = os.path.join(output_dir, f"detected_{st.session_state['last_upload']['name']}")
                 img_annotated_cv2 = np.array(img_annotated)
                 img_annotated_cv2 = img_annotated_cv2[:, :, ::-1]
-                import cv2
-                cv2.imwrite(output_path, img_annotated_cv2)
+                
+                
 
                 if total == 0:
                     result_text = 'No weeds detected'
