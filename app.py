@@ -12,7 +12,80 @@ from reportlab.lib.utils import ImageReader
 from recommendations import format_recommendation
 
 
-# Page configuration
+# Translations Dictionary
+TRANSLATIONS = {
+    "English": {
+        "title": "WeedShield AI",
+        "subtitle": "Weed Detection and Prevention in Wheat Crop Using AI",
+        "upload": "Upload Farm Image",
+        "detect_btn": "Detect",
+        "weed_detected": "⚠️ WEED DETECTED",
+        "no_weed": "✅ NO WEED FOUND",
+        "confidence": "Confidence",
+        "treatment": "Treatment Recommendations",
+        "severity": "Severity Level",
+        "action": "Action",
+        "urgency": "Urgency",
+        "methods": "Recommended Methods",
+        "herbicides": "Recommended Herbicides",
+        "history": "Detection History",
+        "no_history": "No detections yet",
+        "clear_history": "Clear History",
+        "how_to_use": "How to use",
+        "step1": "📸 Take or upload a photo of your wheat field",
+        "step2": "🔍 Click Detect to analyze for weeds",
+        "step3": "📋 Get instant treatment recommendations",
+        "download_pdf": "📥 Download Detection Report (PDF)"
+    },
+    "Telugu (తెలుగు)": {
+        "title": "వీడ్‌షీల్డ్ AI",
+        "subtitle": "AI ఉపయోగించి గోధుమ పంటలో కలుపు మొక్కల గుర్తింపు మరియు నివారణ",
+        "upload": "వ్యవసాయ చిత్రాన్ని అప్‌లోడ్ చేయండి",
+        "detect_btn": "గుర్తించు",
+        "weed_detected": "⚠️ కలుపు మొక్క గుర్తించబడింది",
+        "no_weed": "✅ కలుపు మొక్కలు లేవు",
+        "confidence": "నమ్మకం స్కోర్",
+        "treatment": "చికిత్స సిఫార్సులు",
+        "severity": "తీవ్రత స్థాయి",
+        "action": "చర్య",
+        "urgency": "అత్యవసరత",
+        "methods": "సిఫార్సు చేయబడిన పద్ధతులు",
+        "herbicides": "సిఫార్సు చేయబడిన కలుపు మందులు",
+        "history": "గుర్తింపు చరిత్ర",
+        "no_history": "ఇంకా గుర్తింపులు లేవు",
+        "clear_history": "చరిత్ర తొలగించు",
+        "how_to_use": "ఎలా ఉపయోగించాలి",
+        "step1": "📸 మీ గోధుమ పొలం ఫోటో తీయండి లేదా అప్‌లోడ్ చేయండి",
+        "step2": "🔍 కలుపు మొక్కలను విశ్లేషించడానికి గుర్తించు నొక్కండి",
+        "step3": "📋 తక్షణ చికిత్స సిఫార్సులు పొందండి",
+        "download_pdf": "📥 నివేదికను డౌన్‌లోడ్ చేయండి"
+    },
+    "Hindi (हिंदी)": {
+        "title": "वीडशील्ड AI",
+        "subtitle": "AI का उपयोग करके गेहूं की फसल में खरपतवार की पहचान और रोकथाम",
+        "upload": "खेत की तस्वीर अपलोड करें",
+        "detect_btn": "पहचानें",
+        "weed_detected": "⚠️ खरपतवार मिला",
+        "no_weed": "✅ कोई खरपतवार नहीं",
+        "confidence": "विश्वास स्कोर",
+        "treatment": "उपचार की सिफारिशें",
+        "severity": "गंभीरता स्तर",
+        "action": "कार्रवाई",
+        "urgency": "तत्कालता",
+        "methods": "अनुशंसित तरीके",
+        "herbicides": "अनुशंसित खरपतवारनाशी",
+        "history": "पहचान इतिहास",
+        "no_history": "अभी तक कोई पहचान नहीं",
+        "clear_history": "इतिहास साफ करें",
+        "how_to_use": "कैसे उपयोग करें",
+        "step1": "📸 अपने गेहूं के खेत की फोटो लें या अपलोड करें",
+        "step2": "🔍 खरपतवार का विश्लेषण करने के लिए पहचानें दबाएं",
+        "step3": "📋 तुरंत उपचार की सिफारिशें प्राप्त करें",
+        "download_pdf": "📥 रिपोर्ट डाउनलोड करें"
+    }
+}
+
+
 st.set_page_config(page_title="WeedShield AI — Professional Weed Detector", layout="wide")
 
 
@@ -284,7 +357,13 @@ except Exception as e:
 
 
 # Sidebar navigation
-st.sidebar.title("WeedShield AI")
+language = st.sidebar.selectbox(
+    "🌐 Language / భాష / भाषा",
+    ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"]
+)
+t = TRANSLATIONS[language]
+
+st.sidebar.title(t["title"])
 menu = st.sidebar.radio("Navigation", ["Home", "Detect", "Learn", "About"])
 
 
@@ -301,9 +380,9 @@ def add_history(entry):
 
 
 def render_sidebar_history():
-    st.sidebar.markdown("## Detection History")
+    st.sidebar.markdown(f"## {t['history']}")
     if not st.session_state['history']:
-        st.sidebar.info("No detections yet.")
+        st.sidebar.info(t['no_history'])
     else:
         for h in st.session_state['history']:
             st.sidebar.markdown(f"**{h['time']}** — {h['image_name']}")
@@ -311,7 +390,7 @@ def render_sidebar_history():
             st.sidebar.markdown(f"- Confidence: **{h['confidence']:.1f}%**")
             st.sidebar.markdown("---")
 
-    if st.sidebar.button('Clear History'):
+    if st.sidebar.button(t['clear_history']):
         st.session_state['history'] = []
 
 
@@ -323,13 +402,13 @@ if menu == 'Home':
     c1, c2 = st.columns([3,1])
     with c1:
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown('<h1 class="title-centered">WeedShield AI</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle-centered">AI‑Powered Weed Detection in Wheat Fields</p>', unsafe_allow_html=True)
+        st.markdown(f'<h1 class="title-centered">{t["title"]}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<p class="subtitle-centered">{t["subtitle"]}</p>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
         st.markdown('<div class="glass-card" style="margin-top:12px">', unsafe_allow_html=True)
-        st.markdown('**How to use**', unsafe_allow_html=True)
-        st.markdown('- Upload a farm image (JPEG/PNG).\n- Click "Detect" to analyze the image.\n- Review detailed detection results with bounding boxes, counts, and confidence scores.')
+        st.markdown(f'**{t["how_to_use"]}**', unsafe_allow_html=True)
+        st.markdown(f'- {t["step1"]}\n- {t["step2"]}\n- {t["step3"]}')
         st.markdown('</div>', unsafe_allow_html=True)
 
     with c2:
@@ -340,12 +419,12 @@ if menu == 'Home':
 
 ### DETECT ###
 if menu == 'Detect':
-    st.markdown('## Detect — Upload image for analysis')
+    st.markdown(f'## Detect — {t["upload"]} for analysis')
     col_left, col_right = st.columns([2,1])
 
     with col_left:
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown('<div class="file-label">Upload Farm Image</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="file-label">{t["upload"]}</div>', unsafe_allow_html=True)
         uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'], help='High-resolution field images give better results')
 
         if uploaded_file is not None:
@@ -356,7 +435,7 @@ if menu == 'Detect':
 
         st.markdown('</div>', unsafe_allow_html=True)
 
-        if uploaded_file is not None and st.button('Detect', use_container_width=True):
+        if uploaded_file is not None and st.button(t['detect_btn'], use_container_width=True):
             if model is None:
                 st.error('Model not loaded. Cannot run detection.')
             else:
@@ -406,7 +485,7 @@ if menu == 'Detect':
 
                 pdf_filename = f"{st.session_state['last_upload']['name'].rsplit('.', 1)[0]}_detection_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
                 st.download_button(
-                    label="📥 Download Detection Report (PDF)",
+                    label=t['download_pdf'],
                     data=pdf_data,
                     file_name=pdf_filename,
                     mime="application/pdf",
@@ -418,12 +497,12 @@ if menu == 'Detect':
                     weed_confidences = [float(b.conf[0]) * 100 for b in boxes if int(b.cls[0]) == 0]
                     max_conf = max(weed_confidences) if weed_confidences else 0
                     st.markdown(f'<div style="text-align: center; padding: 20px; background: rgba(255,0,0,0.15); border-radius: 12px; border: 2px solid #ff4444;">', unsafe_allow_html=True)
-                    st.markdown(f'<h1 style="color: #ff4444; margin: 0;">⚠️ WEED DETECTED</h1>', unsafe_allow_html=True)
-                    st.markdown(f'<h3 style="color: #ffcccc; margin: 8px 0 0 0;">Confidence: {max_conf:.1f}%</h3>', unsafe_allow_html=True)
+                    st.markdown(f'<h1 style="color: #ff4444; margin: 0;">{t["weed_detected"]}</h1>', unsafe_allow_html=True)
+                    st.markdown(f'<h3 style="color: #ffcccc; margin: 8px 0 0 0;">{t["confidence"]}: {max_conf:.1f}%</h3>', unsafe_allow_html=True)
                     st.markdown(f'</div>', unsafe_allow_html=True)
                 else:
                     st.markdown(f'<div style="text-align: center; padding: 20px; background: rgba(0,200,0,0.15); border-radius: 12px; border: 2px solid #00c800;">', unsafe_allow_html=True)
-                    st.markdown(f'<h1 style="color: #00c800; margin: 0;">✅ NO WEED FOUND</h1>', unsafe_allow_html=True)
+                    st.markdown(f'<h1 style="color: #00c800; margin: 0;">{t["no_weed"]}</h1>', unsafe_allow_html=True)
                     st.markdown(f'</div>', unsafe_allow_html=True)
 
                 # Dropdown expander
@@ -447,7 +526,7 @@ if menu == 'Detect':
                 # Treatment Recommendations section - only show when weeds are detected
                 if weed_count > 0:
                     st.markdown("---")
-                    st.markdown("**Treatment Recommendations**")
+                    st.markdown(f"**{t['treatment']}**")
 
                     severity_colors = {
                         "LOW": "#FFD700",
@@ -470,13 +549,13 @@ if menu == 'Detect':
                         st.markdown(f"- {method}")
 
                     if treatment_info.get('all_herbicides', []):
-                        st.markdown("**Recommended Herbicides:**")
+                        st.markdown(f"**{t['herbicides']}:**")
                         for herbicide in treatment_info.get('all_herbicides', []):
                             st.markdown(f"- {herbicide}")
                     else:
-                        st.markdown("**Recommended Herbicides:** None - Preventive monitoring only")
+                        st.markdown(f"**{t['herbicides']}:** None - Preventive monitoring only")
 
-                    st.markdown(f"**Urgency:** {treatment_info.get('urgency', 'N/A')}")
+                    st.markdown(f"**{t['urgency']}:** {treatment_info.get('urgency', 'N/A')}")
                     st.markdown(f"**Cost Impact:** {treatment_info.get('cost_impact', 'N/A')}")
 
                 # Add to history
