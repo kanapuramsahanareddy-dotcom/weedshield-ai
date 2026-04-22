@@ -3,3 +3,5 @@ ultralytics==8.2.0
 pillow
 numpy
 reportlab
+torch==2.3.0
+torchvision==0.18.0
