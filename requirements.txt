@@ -3,4 +3,4 @@ ultralytics
 pillow
 numpy
 reportlab
-opencv-python-headless
+opencv-python-headless==4.8.0.76
