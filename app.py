@@ -35,7 +35,33 @@ TRANSLATIONS = {
         "step1": "📸 Take or upload a photo of your wheat field",
         "step2": "🔍 Click Detect to analyze for weeds",
         "step3": "📋 Get instant treatment recommendations",
-        "download_pdf": "📥 Download Detection Report (PDF)"
+        "download_pdf": "📥 Download Detection Report (PDF)",
+        "learn_title": "Learn — Weeds in Wheat Crops",
+        "tab1": "Weeds in Wheat Crops",
+        "tab2": "Impact on Agriculture",
+        "tab3": "Prevention Methods",
+        "what_are_weeds": "What are weeds in wheat fields",
+        "weeds_desc": "Weeds are non-crop plants that grow within crop stands and compete for resources. Common examples in wheat fields:",
+        "weed1": "Phalaris minor (Little seed canary grass)",
+        "weed2": "Avena fatua (Wild oats)",
+        "weed3": "Other broadleaf and grassy weeds",
+        "how_affect": "How weeds affect wheat yield:",
+        "affect1": "Compete for light, water and nutrients",
+        "affect2": "Reduce grain yield and quality",
+        "affect3": "Increase production costs",
+        "how_identify": "How to identify weeds vs wheat",
+        "identify_desc": "Identify by leaf shape, growth habit and tiller structure; automated detection uses visual features learned by the model.",
+        "why_early": "Why early detection is important",
+        "early_desc": "Early detection enables targeted treatment, reduces herbicide use and limits yield loss.",
+        "impact_title": "Impact on Agriculture",
+        "impact1": "Typical crop loss from severe weed infestation: 10-30% (varies by species and timing)",
+        "impact2": "Economic impact: reduced marketable yield, increased input costs, and labor",
+        "farmer_challenges": "Farmer challenges include timely identification, selective application of control measures, and labor limitations.",
+        "prevention_title": "Prevention Methods",
+        "prev1": "Manual removal where feasible",
+        "prev2": "Herbicide programs (selective and rotational use)",
+        "prev3": "Cultural practices (crop rotation, competitive cultivars)",
+        "ai_benefits": "AI detection benefits: fast field-scale scouting, early warning, and data-driven interventions to reduce costs and environmental impact."
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -58,7 +84,33 @@ TRANSLATIONS = {
         "step1": "📸 మీ గోధుమ పొలం ఫోటో తీయండి లేదా అప్‌లోడ్ చేయండి",
         "step2": "🔍 కలుపు మొక్కలను విశ్లేషించడానికి గుర్తించు నొక్కండి",
         "step3": "📋 తక్షణ చికిత్స సిఫార్సులు పొందండి",
-        "download_pdf": "📥 నివేదికను డౌన్‌లోడ్ చేయండి"
+        "download_pdf": "📥 నివేదికను డౌన్‌లోడ్ చేయండి",
+        "learn_title": "నేర్చుకోండి — గోధుమ పంటలో కలుపు మొక్కలు",
+        "tab1": "గోధుమ పంటలో కలుపు మొక్కలు",
+        "tab2": "వ్యవసాయంపై ప్రభావం",
+        "tab3": "నివారణ పద్ధతులు",
+        "what_are_weeds": "గోధుమ పొలాలలో కలుపు మొక్కలు ఏమిటి",
+        "weeds_desc": "కలుపు మొక్కలు పంట లేని మొక్కలు, ఇవి పంట మొక్కలతో పోటీ పడతాయి. గోధుమ పొలాలలో సాధారణ ఉదాహరణలు:",
+        "weed1": "ఫలారిస్ మైనర్ (చిన్న గింజ కానరీ గడ్డి)",
+        "weed2": "అవెనా ఫాటువా (అడవి వోట్స్)",
+        "weed3": "ఇతర వెడల్పు ఆకు మరియు గడ్డి కలుపు మొక్కలు",
+        "how_affect": "కలుపు మొక్కలు గోధుమ దిగుబడిని ఎలా ప్రభావితం చేస్తాయి:",
+        "affect1": "కాంతి, నీరు మరియు పోషకాల కోసం పోటీ",
+        "affect2": "ధాన్యం దిగుబడి మరియు నాణ్యతను తగ్గిస్తుంది",
+        "affect3": "ఉత్పత్తి ఖర్చులు పెరుగుతాయి",
+        "how_identify": "కలుపు మొక్కలు మరియు గోధుమను ఎలా గుర్తించాలి",
+        "identify_desc": "ఆకు ఆకారం, పెరుగుదల అలవాటు మరియు టిల్లర్ నిర్మాణం ద్వారా గుర్తించండి.",
+        "why_early": "ముందస్తు గుర్తింపు ఎందుకు ముఖ్యమైనది",
+        "early_desc": "ముందస్తు గుర్తింపు లక్ష్య చికిత్సను అనుమతిస్తుంది, కలుపు మందుల వాడకాన్ని తగ్గిస్తుంది.",
+        "impact_title": "వ్యవసాయంపై ప్రభావం",
+        "impact1": "తీవ్రమైన కలుపు దాడి వల్ల సాధారణ పంట నష్టం: 10-30%",
+        "impact2": "ఆర్థిక ప్రభావం: తగ్గిన దిగుబడి, పెరిగిన ఖర్చులు",
+        "farmer_challenges": "రైతుల సవాళ్లలో సకాలంలో గుర్తింపు మరియు శ్రమ పరిమితులు ఉన్నాయి.",
+        "prevention_title": "నివారణ పద్ధతులు",
+        "prev1": "సాధ్యమైనచోట చేతితో తొలగింపు",
+        "prev2": "కలుపు మందు కార్యక్రమాలు",
+        "prev3": "సాంస్కృతిక పద్ధతులు (పంట మార్పిడి)",
+        "ai_benefits": "AI గుర్తింపు ప్రయోజనాలు: వేగవంతమైన పొలం పర్యవేక్షణ మరియు ముందస్తు హెచ్చరిక."
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -81,7 +133,33 @@ TRANSLATIONS = {
         "step1": "📸 अपने गेहूं के खेत की फोटो लें या अपलोड करें",
         "step2": "🔍 खरपतवार का विश्लेषण करने के लिए पहचानें दबाएं",
         "step3": "📋 तुरंत उपचार की सिफारिशें प्राप्त करें",
-        "download_pdf": "📥 रिपोर्ट डाउनलोड करें"
+        "download_pdf": "📥 रिपोर्ट डाउनलोड करें",
+        "learn_title": "सीखें — गेहूं की फसल में खरपतवार",
+        "tab1": "गेहूं में खरपतवार",
+        "tab2": "कृषि पर प्रभाव",
+        "tab3": "रोकथाम के तरीके",
+        "what_are_weeds": "गेहूं के खेतों में खरपतवार क्या हैं",
+        "weeds_desc": "खरपतवार गैर-फसल पौधे हैं जो फसल के साथ प्रतिस्पर्धा करते हैं। गेहूं के खेतों में सामान्य उदाहरण:",
+        "weed1": "फालारिस माइनर (छोटे बीज वाली कैनरी घास)",
+        "weed2": "एवेना फातुआ (जंगली जई)",
+        "weed3": "अन्य चौड़ी पत्ती और घास वाले खरपतवार",
+        "how_affect": "खरपतवार गेहूं की उपज को कैसे प्रभावित करते हैं:",
+        "affect1": "प्रकाश, पानी और पोषक तत्वों के लिए प्रतिस्पर्धा",
+        "affect2": "अनाज की उपज और गुणवत्ता कम करता है",
+        "affect3": "उत्पादन लागत बढ़ाता है",
+        "how_identify": "खरपतवार और गेहूं की पहचान कैसे करें",
+        "identify_desc": "पत्ती के आकार, वृद्धि की आदत से पहचानें।",
+        "why_early": "जल्दी पहचान क्यों जरूरी है",
+        "early_desc": "जल्दी पहचान से लक्षित उपचार संभव होता है।",
+        "impact_title": "कृषि पर प्रभाव",
+        "impact1": "गंभीर खरपतवार से फसल नुकसान: 10-30%",
+        "impact2": "आर्थिक प्रभाव: कम उपज, बढ़ी हुई लागत",
+        "farmer_challenges": "किसानों की चुनौतियों में समय पर पहचान और श्रम सीमाएं शामिल हैं।",
+        "prevention_title": "रोकथाम के तरीके",
+        "prev1": "जहां संभव हो हाथ से निराई",
+        "prev2": "खरपतवारनाशी कार्यक्रम",
+        "prev3": "सांस्कृतिक तरीके (फसल चक्र)",
+        "ai_benefits": "AI पहचान के फायदे: तेज़ खेत निगरानी और प्रारंभिक चेतावनी।"
     }
 }
 
@@ -536,15 +614,15 @@ if menu == 'Detect':
                     severity_color = severity_colors.get(treatment_info.get('severity', 'LOW'), "#CCCCCC")
 
                     st.markdown(f"<div style='padding: 12px; background-color: rgba({int(severity_color[1:3], 16)}, {int(severity_color[3:5], 16)}, {int(severity_color[5:7], 16)}, 0.2); border-left: 4px solid {severity_color}; border-radius: 6px;'>", unsafe_allow_html=True)
-                    st.markdown(f"**Severity Level:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info.get('severity', 'LOW')}</span>", unsafe_allow_html=True)
+                    st.markdown(f"**{t['severity']}:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info.get('severity', 'LOW')}</span>", unsafe_allow_html=True)
                     st.markdown(f"**Confidence Range:** {treatment_info.get('urgency', 'N/A')}", unsafe_allow_html=True)
                     st.markdown(f"**Confidence Score:** {avg_weed_confidence:.1%}", unsafe_allow_html=True)
                     st.markdown("</div>", unsafe_allow_html=True)
 
-                    st.markdown(f"**Action:** {treatment_info.get('action', 'Monitor field')}")
+                    st.markdown(f"**{t['action']}:** {treatment_info.get('action', 'Monitor field')}")
                     st.markdown(f"**Description:** {treatment_info.get('description', 'N/A')}")
 
-                    st.markdown("**Recommended Methods:**")
+                    st.markdown(f"**{t['methods']}:")
                     for method in treatment_info.get('methods', []):
                         st.markdown(f"- {method}")
 
@@ -580,36 +658,36 @@ if menu == 'Detect':
             st.markdown(f"Confidence: **{latest['confidence']:.1f}%**")
             st.markdown(f"*{latest['time']}*")
         else:
-            st.markdown('No detections yet')
+            st.markdown(t['no_history'])
         st.markdown('</div>', unsafe_allow_html=True)
 
 
 ### LEARN ###
 if menu == 'Learn':
-    st.header('Learn — Weeds in Wheat Crops')
-    tabs = st.tabs(['Weeds in Wheat Crops', 'Impact on Agriculture', 'Prevention Methods'])
+    st.header(t['learn_title'])
+    tabs = st.tabs([t['tab1'], t['tab2'], t['tab3']])
 
     with tabs[0]:
-        st.subheader('What are weeds in wheat fields')
-        st.write('Weeds are non-crop plants that grow within crop stands and compete for resources. Common examples in wheat fields:')
-        st.markdown('- Phalaris minor (Little seed canary grass)\n- Avena fatua (Wild oats)\n- Other broadleaf and grassy weeds')
-        st.write('How weeds affect wheat yield:')
-        st.markdown('- Compete for light, water and nutrients\n- Reduce grain yield and quality\n- Increase production costs')
-        st.subheader('How to identify weeds vs wheat')
-        st.write('Identify by leaf shape, growth habit and tiller structure; automated detection uses visual features learned by the model.')
-        st.subheader('Why early detection is important')
-        st.write('Early detection enables targeted treatment, reduces herbicide use and limits yield loss.')
+        st.subheader(t['what_are_weeds'])
+        st.write(t['weeds_desc'])
+        st.markdown(f"- {t['weed1']}\n- {t['weed2']}\n- {t['weed3']}")
+        st.write(t['how_affect'])
+        st.markdown(f"- {t['affect1']}\n- {t['affect2']}\n- {t['affect3']}")
+        st.subheader(t['how_identify'])
+        st.write(t['identify_desc'])
+        st.subheader(t['why_early'])
+        st.write(t['early_desc'])
 
     with tabs[1]:
-        st.subheader('Impact on Agriculture')
-        st.markdown('- Typical crop loss from severe weed infestation: **10–30%** (varies by species and timing)')
-        st.markdown('- Economic impact: reduced marketable yield, increased input costs, and labor')
-        st.write('Farmer challenges include timely identification, selective application of control measures, and labor limitations.')
+        st.subheader(t['impact_title'])
+        st.markdown(f"- {t['impact1']}")
+        st.markdown(f"- {t['impact2']}")
+        st.write(t['farmer_challenges'])
 
     with tabs[2]:
-        st.subheader('Prevention Methods')
-        st.markdown('- Manual removal where feasible\n- Herbicide programs (selective and rotational use)\n- Cultural practices (crop rotation, competitive cultivars)')
-        st.write('AI detection benefits: fast field-scale scouting, early warning, and data-driven interventions to reduce costs and environmental impact.')
+        st.subheader(t['prevention_title'])
+        st.markdown(f"- {t['prev1']}\n- {t['prev2']}\n- {t['prev3']}")
+        st.write(t['ai_benefits'])
 
 
 ### ABOUT ###
