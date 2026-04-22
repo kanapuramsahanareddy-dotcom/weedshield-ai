@@ -785,7 +785,7 @@ if menu == 'Detect':
                 img_np = np.array(img_pil)
                 
                 with st.spinner('🔄 Running detection...'):
-                    results = model(img_np, conf=0.5)
+                    results = model(img_np, conf=0.6)
                 t1 = time.time()
 
                 boxes = results[0].boxes
