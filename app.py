@@ -61,7 +61,11 @@ TRANSLATIONS = {
         "prev1": "Manual removal where feasible",
         "prev2": "Herbicide programs (selective and rotational use)",
         "prev3": "Cultural practices (crop rotation, competitive cultivars)",
-        "ai_benefits": "AI detection benefits: fast field-scale scouting, early warning, and data-driven interventions to reduce costs and environmental impact."
+        "ai_benefits": "AI detection benefits: fast field-scale scouting, early warning, and data-driven interventions to reduce costs and environmental impact.",
+        "nav_home": "🏠 Home",
+        "nav_detect": "🔍 Detect",
+        "nav_learn": "📚 Learn",
+        "model_ready": "✓ Ready"
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -110,7 +114,11 @@ TRANSLATIONS = {
         "prev1": "సాధ్యమైనచోట చేతితో తొలగింపు",
         "prev2": "కలుపు మందు కార్యక్రమాలు",
         "prev3": "సాంస్కృతిక పద్ధతులు (పంట మార్పిడి)",
-        "ai_benefits": "AI గుర్తింపు ప్రయోజనాలు: వేగవంతమైన పొలం పర్యవేక్షణ మరియు ముందస్తు హెచ్చరిక."
+        "ai_benefits": "AI గుర్తింపు ప్రయోజనాలు: వేగవంతమైన పొలం పర్యవేక్షణ మరియు ముందస్తు హెచ్చరిక.",
+        "nav_home": "🏠 హోమ్",
+        "nav_detect": "🔍 గుర్తించు",
+        "nav_learn": "📚 నేర్చుకోండి",
+        "model_ready": "✓ సిద్ధంగా ఉంది"
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -159,7 +167,11 @@ TRANSLATIONS = {
         "prev1": "जहां संभव हो हाथ से निराई",
         "prev2": "खरपतवारनाशी कार्यक्रम",
         "prev3": "सांस्कृतिक तरीके (फसल चक्र)",
-        "ai_benefits": "AI पहचान के फायदे: तेज़ खेत निगरानी और प्रारंभिक चेतावनी।"
+        "ai_benefits": "AI पहचान के फायदे: तेज़ खेत निगरानी और प्रारंभिक चेतावनी।",
+        "nav_home": "🏠 होम",
+        "nav_detect": "🔍 पहचानें",
+        "nav_learn": "📚 सीखें",
+        "model_ready": "✓ तैयार है"
     }
 }
 
@@ -167,46 +179,172 @@ TRANSLATIONS = {
 st.set_page_config(page_title="WeedShield AI — Professional Weed Detector", layout="wide")
 
 
-# Professional CSS: farm theme + glassmorphism
+# Mobile friendly CSS with modern design
 page_css = """
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* { font-family: 'Poppins', sans-serif; }
+
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a2a 50%, #0d2818 100%);
+    min-height: 100vh;
+}
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #071a0f 0%, #0a2415 100%) !important;
+    border-right: 1px solid #1a4a2a;
+}
+
+[data-testid="stSidebar"] * {
+    color: #e8f5e9 !important;
+}
+
+/* BUTTONS - Pop animation */
 .stButton > button {
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 15px rgba(0,200,83,0.3) !important;
+    background: linear-gradient(135deg, #00c853, #00e676) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 14px 28px !important;
+    width: 100% !important;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4) !important;
+    cursor: pointer !important;
+    letter-spacing: 0.5px !important;
 }
+
 .stButton > button:hover {
-    transform: translateY(-3px) scale(1.03) !important;
-    box-shadow: 0 8px 25px rgba(0,200,83,0.6) !important;
+    transform: translateY(-4px) scale(1.03) !important;
+    box-shadow: 0 8px 30px rgba(0, 200, 83, 0.65) !important;
+    background: linear-gradient(135deg, #00e676, #69f0ae) !important;
 }
+
+.stButton > button:active {
+    transform: translateY(0px) scale(0.98) !important;
+}
+
+/* CARDS */
+.glass-card {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(0, 200, 83, 0.25) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 200, 83, 0.5) !important;
+    box-shadow: 0 0 20px rgba(0, 200, 83, 0.15) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* TEXT */
+h1, h2, h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+p, li, div {
+    color: #e0f0e0 !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+/* FILE UPLOADER */
+[data-testid="stFileUploader"] {
+    background: rgba(0, 200, 83, 0.05) !important;
+    border: 2px dashed rgba(0, 200, 83, 0.4) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: rgba(0, 200, 83, 0.8) !important;
+    background: rgba(0, 200, 83, 0.08) !important;
+}
+
+/* SUCCESS/ERROR BOXES */
+[data-testid="stSuccess"] {
+    background: rgba(0, 200, 83, 0.15) !important;
+    border: 1px solid #00c853 !important;
+    border-radius: 10px !important;
+}
+
+/* TABS */
+.stTabs [data-baseweb="tab"] {
+    color: #00c853 !important;
+    font-weight: 600 !important;
+}
+
+/* EXPANDER */
+.streamlit-expanderHeader {
+    background: rgba(0, 200, 83, 0.1) !important;
+    border-radius: 10px !important;
+    color: #00c853 !important;
+    font-weight: 600 !important;
+}
+
+/* SELECTBOX */
+[data-testid="stSelectbox"] > div {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid #00c853 !important;
+    border-radius: 10px !important;
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-    .main .block-container { padding: 1rem !important; }
-    h1 { font-size: 24px !important; }
+    .main .block-container {
+        padding: 1rem 0.5rem !important;
+    }
+    h1 { font-size: 22px !important; }
+    h2 { font-size: 18px !important; }
+    h3 { font-size: 16px !important; }
+    p, li { font-size: 14px !important; }
+    .stButton > button {
+        font-size: 14px !important;
+        padding: 12px 20px !important;
+    }
 }
-:root{--farm-green:#2d5b3b; --farm-brown:#7a4a2b; --wheat:#d6b85a; --accent:#6fbf73; --glass: rgba(255,255,255,0.04); --glass-border: rgba(255,255,255,0.06)}
-body {color: #f3f7f2; font-family: 'Segoe UI', Roboto, Arial, sans-serif}
-[data-testid="stAppViewContainer"]{
-    background-image: linear-gradient(rgba(6,10,6,0.55), rgba(6,10,6,0.55)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover; background-position: center; background-attachment: fixed
+
+/* DOWNLOAD BUTTON */
+[data-testid="stDownloadButton"] > button {
+    background: linear-gradient(135deg, #1565c0, #1976d2) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    padding: 14px 28px !important;
+    width: 100% !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.4) !important;
 }
-[data-testid="stSidebar"]{background: linear-gradient(180deg, rgba(10,45,19,0.9), rgba(8,30,18,0.95)); color: #f0fbf0}
-.glass-card{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:12px;padding:16px;border:1px solid var(--glass-border)}
-.title-centered{text-align:center;font-size:34px;color:var(--wheat);margin:0 0 6px 0;font-weight:700}
-.subtitle-centered{text-align:center;color:#f7f5e6;margin:0 0 14px 0}
-.muted{color:#d9ead8}
-.result-card{background: linear-gradient(180deg, rgba(45,60,30,0.55), rgba(38,50,28,0.45)); border-radius:12px; padding:14px; border:1px solid rgba(219,189,115,0.06)}
-.small{font-size:13px;color:#dbeed6}
-.label{color:#fbf7e6;font-weight:600}
-.value{color:#fff7e9;font-weight:700}
-.conf{color:var(--wheat); font-weight:800}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
-.stat-box{background:rgba(45,75,45,0.6);padding:12px;border-radius:8px;border-left:3px solid var(--wheat)}
-.stat-label{font-size:11px;color:#d4e69f;text-transform:uppercase;font-weight:600}
-.stat-value{font-size:28px;color:#fff;font-weight:900;margin-top:4px}
-.uploader {border-radius:10px; padding:12px}
-.btn-wrap .stButton>button{background:var(--farm-green);color:white;border-radius:8px;padding:10px 14px;border:none;font-weight:700}
-.btn-wrap .stButton>button:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.35);opacity:0.95}
-.file-label{font-weight:600;color:#fff7e9}
-hr{border:0; border-top:1px solid rgba(255,255,255,0.04)}
+
+[data-testid="stDownloadButton"] > button:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 8px 30px rgba(21, 101, 192, 0.6) !important;
+}
+
+/* SPINNER */
+.stSpinner > div {
+    border-top-color: #00c853 !important;
+}
+
+/* RADIO BUTTONS in sidebar */
+[data-testid="stSidebar"] .stRadio label {
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+[data-testid="stSidebar"] .stRadio label:hover {
+    background: rgba(0, 200, 83, 0.15) !important;
+}
 </style>
 """
 
@@ -424,7 +562,14 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
 
 # Model path and load
 MODEL_PATH = "best.pt"
-st.sidebar.success("✓ Model Loaded Successfully")
+
+# Sidebar navigation - get language first to use for success message
+language = st.sidebar.selectbox(
+    "🌐 Language / భాష / भाषा",
+    ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"]
+)
+t = TRANSLATIONS[language]
+st.sidebar.success(t.get("model_ready", "✓ Ready"))
 
 try:
     with st.spinner('Loading model (YOLOv8)...'):
@@ -434,15 +579,9 @@ except Exception as e:
     model = None
 
 
-# Sidebar navigation
-language = st.sidebar.selectbox(
-    "🌐 Language / భాష / भाषा",
-    ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"]
-)
-t = TRANSLATIONS[language]
-
 st.sidebar.title(t["title"])
-menu = st.sidebar.radio("Navigation", ["Home", "Detect", "Learn"])
+menu = st.sidebar.radio("Navigation", 
+    [t.get("nav_home","Home"), t.get("nav_detect","Detect"), t.get("nav_learn","Learn")])
 
 
 # Session state initialization
@@ -476,7 +615,7 @@ render_sidebar_history()
 
 
 ### HOME ###
-if menu == 'Home':
+if t.get("nav_home","Home") in menu or menu == 'Home':
     c1, c2 = st.columns([3,1])
     with c1:
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
@@ -496,7 +635,7 @@ if menu == 'Home':
 
 
 ### DETECT ###
-if menu == 'Detect':
+if t.get("nav_detect","Detect") in menu or menu == 'Detect':
     st.markdown(f'## {t.get("upload", "Upload Farm Image")}')
     col_left, col_right = st.columns([2,1])
 
@@ -663,7 +802,7 @@ if menu == 'Detect':
 
 
 ### LEARN ###
-if menu == 'Learn':
+if t.get("nav_learn","Learn") in menu or menu == 'Learn':
     st.header(t['learn_title'])
     tabs = st.tabs([t['tab1'], t['tab2'], t['tab3']])
 
