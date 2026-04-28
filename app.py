@@ -103,7 +103,15 @@ TRANSLATIONS = {
         "running_detection": "Running detection...",
         "detection_completed_success": "✓ Detection completed successfully",
         "detection_completed": "✓ Detection completed",
-        "home_title": "🏠 Home"
+        "home_title": "🏠 Home",
+        "language_label": "Language",
+        "upload_btn": "Upload",
+        "upload_hint": "High-resolution field images give better results",
+        "upload_hint_text": "Take a clear photo of your wheat field and upload below",
+        "detect_weeds": "🔍 Detect Weeds",
+        "home": "Home",
+        "detect": "Detect",
+        "learn": "Learn"
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -194,7 +202,15 @@ TRANSLATIONS = {
         "running_detection": "గుర్తింపు నడుస్తోంది...",
         "detection_completed_success": "✓ గుర్తింపు విజయవంతమైనది",
         "detection_completed": "✓ గుర్తింపు పూర్తైనది",
-        "home_title": "🏠 హోమ్"
+        "home_title": "🏠 హోమ్",
+        "language_label": "భాష",
+        "upload_btn": "అప్‌లోడ్ చేయండి",
+        "upload_hint": "అధిక-రిజల్యూషన్ ఫీల్డ్ ఇమేజ్‌లు మెరుగైన ఫలితాలను ఇస్తాయి",
+        "upload_hint_text": "మీ గోధుమ పొలం యొక్క స్పష్టమైన ఫోటో తీసి దిగువన అప్లోడ్ చేయండి",
+        "detect_weeds": "🔍 కలుపు గుర్తించండి",
+        "home": "హోమ్",
+        "detect": "గుర్తించు",
+        "learn": "నేర్చుకోండి"
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -285,7 +301,15 @@ TRANSLATIONS = {
         "running_detection": "जांच चल रही है...",
         "detection_completed_success": "✓ जांच सफलतापूर्वक पूरी हुई",
         "detection_completed": "✓ जांच पूरी हुई",
-        "home_title": "🏠 होम"
+        "home_title": "🏠 होम",
+        "language_label": "भाषा",
+        "upload_btn": "अपलोड करें",
+        "upload_hint": "उच्च-रिज़ॉल्यूशन खेत की तस्वीरें बेहतर परिणाम देती हैं",
+        "upload_hint_text": "अपने गेहूँ के खेत की स्पष्ट फोटो लें और नीचे अपलोड करें",
+        "detect_weeds": "🔍 खरपतवार पहचानें",
+        "home": "होम",
+        "detect": "पहचानें",
+        "learn": "सीखें"
     }
 }
 
@@ -794,9 +818,10 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
 MODEL_PATH = "best.pt"
 
 # Language selector at top of sidebar
+language_options = ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"]
 language = st.sidebar.selectbox(
     "Language",
-    ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"],
+    language_options,
     label_visibility="collapsed"
 )
 t = TRANSLATIONS[language]
@@ -960,9 +985,10 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
 
     with col_left:
         st.markdown('<div class="white-card">', unsafe_allow_html=True)
-        st.markdown("**📸 Upload Field Image**")
+        st.markdown(f"**{t.get('upload_field_image', '📸 Upload Field Image')}**")
+        st.markdown(f"📷 {t.get('upload_hint_text', 'Take a clear photo of your wheat field and upload below')}")
         uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'], label_visibility="collapsed",
-                                        help='High-resolution field images give better results')
+                                        help=t.get('upload_hint', 'High-resolution field images give better results'))
 
         if uploaded_file is not None:
             upload_bytes = uploaded_file.getvalue()
@@ -1018,20 +1044,20 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
     
     with col_right:
         st.markdown('<div class="white-card">', unsafe_allow_html=True)
-        st.markdown("**Latest Detection**")
+        st.markdown(f"**{t.get('latest_detection', 'Latest Detection')}**")
         
         if 'latest_result' in st.session_state:
             result = st.session_state['latest_result']
             if result['weed_count'] > 0:
                 st.markdown(f"<span style='color: #c62828; font-weight: bold;'>⚠️ {result['weed_count']} weed{'s' if result['weed_count'] != 1 else ''} detected</span>", unsafe_allow_html=True)
             else:
-                st.markdown(f"<span style='color: #2e7d32; font-weight: bold;'>✅ Field Clear</span>", unsafe_allow_html=True)
+                st.markdown(f"<span style='color: #2e7d32; font-weight: bold;'>✅ {t.get('field_clear', 'Field Clear')}</span>", unsafe_allow_html=True)
             
-            st.markdown(f"🌾 Wheat: **{result['wheat_count']}**")
-            st.markdown(f"🌱 Weeds: **{result['weed_count']}**")
-            st.markdown(f"🎯 Accuracy: **{result['avg_conf']:.1%}**")
+            st.markdown(f"🌾 {t.get('wheat_label', 'Wheat')}: **{result['wheat_count']}**")
+            st.markdown(f"🌱 {t.get('weeds_label', 'Weeds')}: **{result['weed_count']}**")
+            st.markdown(f"🎯 {t.get('avg_confidence', 'Accuracy')}: **{result['avg_conf']:.1%}**")
         else:
-            st.markdown(t['no_history'])
+            st.markdown(t.get('no_detections', 'No detections yet'))
         
         st.markdown('</div>', unsafe_allow_html=True)
     
@@ -1040,7 +1066,7 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
         result = st.session_state['latest_result']
         
         st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-        st.markdown("<h3 style='color: #2a4d2a;'>Detection Results</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h3 style='color: #2a4d2a;'>{t.get('detection_results', 'Detection Results')}</h3>", unsafe_allow_html=True)
         
         st.markdown('<div class="white-card">', unsafe_allow_html=True)
         st.image(result['img_annotated'], use_column_width=True)
@@ -1110,7 +1136,7 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
 ### LEARN ###
 if t.get("nav_learn","Learn") in menu or menu == 'Learn':
     # Page header
-    st.markdown('<h1 class="page-title">📚 Learn About Weeds</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 class="page-title">{t.get("learn_title", "📚 Learn — Weeds in Wheat Crops")}</h1>', unsafe_allow_html=True)
     st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
     
     tabs = st.tabs([t['tab1'], t['tab2'], t['tab3']])
