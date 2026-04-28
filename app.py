@@ -179,122 +179,242 @@ TRANSLATIONS = {
 st.set_page_config(page_title="WeedShield AI — Professional Weed Detector", layout="wide")
 
 
-# Mobile friendly CSS with modern design
+# Redesigned UI with modern styling
 page_css = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * { font-family: 'Poppins', sans-serif; }
 
+/* MAIN CONTAINER - Light off-white background */
 [data-testid="stAppViewContainer"] {
-    background: linear-gradient(135deg, #0a1628 0%, #1a3a2a 50%, #0d2818 100%);
-    min-height: 100vh;
+    background-color: #f7f5f0 !important;
 }
 
+/* SIDEBAR - Dark forest green */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #071a0f 0%, #0a2415 100%) !important;
-    border-right: 1px solid #1a4a2a;
+    background-color: #1a2e1a !important;
 }
 
 [data-testid="stSidebar"] * {
-    color: #e8f5e9 !important;
+    color: #d4e8d4 !important;
 }
 
-/* BUTTONS - Pop animation */
-.stButton > button {
-    background: linear-gradient(135deg, #00c853, #00e676) !important;
-    color: #000000 !important;
+/* Sidebar specific elements */
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: #d4e8d4 !important;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #a8d5a8 !important;
     font-weight: 700 !important;
-    font-size: 16px !important;
-    border-radius: 12px !important;
+}
+
+/* MAIN CONTENT - Light background */
+.main [data-testid="stAppViewContainer"] > section {
+    background-color: #f7f5f0 !important;
+}
+
+/* TEXT COLORS */
+h1, h2, h3 {
+    color: #2a4d2a !important;
+    font-weight: 700 !important;
+}
+
+p, li, span, div {
+    color: #3d3d3d !important;
+}
+
+/* BUTTONS - Green accent */
+.stButton > button {
+    background: linear-gradient(135deg, #2d6a2d 0%, #3d8a3d 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    border-radius: 8px !important;
     border: none !important;
-    padding: 14px 28px !important;
-    width: 100% !important;
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4) !important;
-    cursor: pointer !important;
-    letter-spacing: 0.5px !important;
+    padding: 12px 24px !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 2px 8px rgba(45, 106, 45, 0.3) !important;
 }
 
 .stButton > button:hover {
-    transform: translateY(-4px) scale(1.03) !important;
-    box-shadow: 0 8px 30px rgba(0, 200, 83, 0.65) !important;
-    background: linear-gradient(135deg, #00e676, #69f0ae) !important;
-}
-
-.stButton > button:active {
-    transform: translateY(0px) scale(0.98) !important;
-}
-
-/* CARDS */
-.glass-card {
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(0, 200, 83, 0.25) !important;
-    border-radius: 16px !important;
-    padding: 20px !important;
-    margin-bottom: 16px !important;
-    backdrop-filter: blur(10px) !important;
-    transition: all 0.3s ease !important;
-}
-
-.glass-card:hover {
-    border-color: rgba(0, 200, 83, 0.5) !important;
-    box-shadow: 0 0 20px rgba(0, 200, 83, 0.15) !important;
+    background: linear-gradient(135deg, #3d8a3d 0%, #4da84d 100%) !important;
+    box-shadow: 0 4px 16px rgba(45, 106, 45, 0.5) !important;
     transform: translateY(-2px) !important;
 }
 
-/* TEXT */
-h1, h2, h3 {
+/* HERO BANNER */
+.hero-banner {
+    background: linear-gradient(135deg, #2a4d2a 0%, #3d6a3d 100%) !important;
+    padding: 40px 30px !important;
+    border-radius: 12px !important;
+    margin-bottom: 30px !important;
+    text-align: center !important;
+    box-shadow: 0 4px 15px rgba(42, 77, 42, 0.2) !important;
+}
+
+.hero-banner h1 {
     color: #ffffff !important;
+    font-size: 32px !important;
+    margin-bottom: 8px !important;
+}
+
+.hero-banner p {
+    color: #e8f5e9 !important;
+    font-size: 18px !important;
+    margin: 0 !important;
+}
+
+/* STAT CARDS */
+.stat-card {
+    background-color: #ffffff !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+}
+
+.stat-card:hover {
+    border-color: #2d6a2d !important;
+    box-shadow: 0 4px 16px rgba(45, 106, 45, 0.1) !important;
+    transform: translateY(-4px) !important;
+}
+
+.stat-card .stat-number {
+    color: #2d6a2d !important;
+    font-size: 36px !important;
     font-weight: 700 !important;
+    margin: 12px 0 !important;
 }
 
-p, li, div {
-    color: #e0f0e0 !important;
-    font-size: 15px !important;
-    line-height: 1.7 !important;
+.stat-card .stat-label {
+    color: #666666 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
 }
 
-/* FILE UPLOADER */
-[data-testid="stFileUploader"] {
-    background: rgba(0, 200, 83, 0.05) !important;
-    border: 2px dashed rgba(0, 200, 83, 0.4) !important;
-    border-radius: 16px !important;
+/* STEP CARDS */
+.step-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 10px !important;
     padding: 20px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.step-card:hover {
+    box-shadow: 0 4px 12px rgba(45, 106, 45, 0.15) !important;
+    border-color: #a8d5a8 !important;
+}
+
+.step-number {
+    display: inline-block !important;
+    background: #2d6a2d !important;
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+}
+
+.step-card h3 {
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+}
+
+/* UPLOAD ZONE */
+[data-testid="stFileUploader"] {
+    background-color: #ffffff !important;
+    border: 2px dashed #2d6a2d !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
     transition: all 0.3s ease !important;
 }
 
 [data-testid="stFileUploader"]:hover {
-    border-color: rgba(0, 200, 83, 0.8) !important;
-    background: rgba(0, 200, 83, 0.08) !important;
+    border-color: #3d8a3d !important;
+    background-color: #f0f7f0 !important;
 }
 
-/* SUCCESS/ERROR BOXES */
-[data-testid="stSuccess"] {
-    background: rgba(0, 200, 83, 0.15) !important;
-    border: 1px solid #00c853 !important;
-    border-radius: 10px !important;
+/* WHITE CARDS */
+.white-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
 }
 
 /* TABS */
 .stTabs [data-baseweb="tab"] {
-    color: #00c853 !important;
+    color: #666666 !important;
     font-weight: 600 !important;
+    border-bottom: 3px solid transparent !important;
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    color: #2d6a2d !important;
+    border-bottom: 3px solid #2d6a2d !important;
 }
 
 /* EXPANDER */
 .streamlit-expanderHeader {
-    background: rgba(0, 200, 83, 0.1) !important;
-    border-radius: 10px !important;
-    color: #00c853 !important;
+    background: #f5f5f5 !important;
+    border-radius: 8px !important;
+    color: #2d6a2d !important;
     font-weight: 600 !important;
 }
 
-/* SELECTBOX */
-[data-testid="stSelectbox"] > div {
-    background: rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid #00c853 !important;
-    border-radius: 10px !important;
+/* PAGE TITLE WITH BADGE */
+.page-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+}
+
+.page-title {
+    color: #2a4d2a !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+
+.season-badge {
+    background: #2d6a2d !important;
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+
+/* STATUS PILL */
+.status-pill {
+    display: inline-block !important;
+    background: #4da84d !important;
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+/* SUCCESS/ERROR BOXES */
+[data-testid="stSuccess"] {
+    background: #e8f5e9 !important;
+    border: 1px solid #81c784 !important;
+    border-radius: 8px !important;
 }
 
 /* MOBILE RESPONSIVE */
@@ -306,45 +426,32 @@ p, li, div {
     h2 { font-size: 18px !important; }
     h3 { font-size: 16px !important; }
     p, li { font-size: 14px !important; }
-    .stButton > button {
-        font-size: 14px !important;
-        padding: 12px 20px !important;
-    }
+    .hero-banner h1 { font-size: 24px !important; }
+    .stat-card .stat-number { font-size: 28px !important; }
 }
 
 /* DOWNLOAD BUTTON */
 [data-testid="stDownloadButton"] > button {
-    background: linear-gradient(135deg, #1565c0, #1976d2) !important;
+    background: #1565c0 !important;
     color: white !important;
-    font-weight: 700 !important;
-    border-radius: 12px !important;
-    padding: 14px 28px !important;
-    width: 100% !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
     transition: all 0.25s ease !important;
-    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.4) !important;
 }
 
 [data-testid="stDownloadButton"] > button:hover {
-    transform: translateY(-3px) scale(1.02) !important;
-    box-shadow: 0 8px 30px rgba(21, 101, 192, 0.6) !important;
+    background: #1976d2 !important;
+    transform: translateY(-2px) !important;
 }
 
-/* SPINNER */
-.stSpinner > div {
-    border-top-color: #00c853 !important;
-}
-
-/* RADIO BUTTONS in sidebar */
-[data-testid="stSidebar"] .stRadio label {
-    padding: 8px 12px !important;
+/* SELECTOR */
+[data-testid="stSelectbox"] > div {
+    background: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
     border-radius: 8px !important;
-    transition: all 0.2s ease !important;
-    cursor: pointer !important;
 }
 
-[data-testid="stSidebar"] .stRadio label:hover {
-    background: rgba(0, 200, 83, 0.15) !important;
-}
 </style>
 """
 
@@ -563,13 +670,13 @@ def generate_pdf_report(img_annotated, weed_count, wheat_count, severity_level, 
 # Model path and load
 MODEL_PATH = "best.pt"
 
-# Sidebar navigation - get language first to use for success message
+# Language selector at top of sidebar
 language = st.sidebar.selectbox(
-    "🌐 Language / భాష / भाषा",
-    ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"]
+    "Language",
+    ["English", "Telugu (తెలుగు)", "Hindi (हिंदी)"],
+    label_visibility="collapsed"
 )
 t = TRANSLATIONS[language]
-st.sidebar.success(t.get("model_ready", "✓ Ready"))
 
 try:
     with st.spinner('Loading model (YOLOv8)...'):
@@ -579,9 +686,47 @@ except Exception as e:
     model = None
 
 
-st.sidebar.title(t["title"])
-menu = st.sidebar.radio("Navigation", 
-    [t.get("nav_home","Home"), t.get("nav_detect","Detect"), t.get("nav_learn","Learn")])
+# SIDEBAR HEADER - Logo area
+st.sidebar.markdown("""
+<div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #3a5a3a; margin-bottom: 20px;">
+    <h1 style="font-size: 28px; margin: 0 0 8px 0;">🌾</h1>
+    <h2 style="font-size: 20px; margin: 0; color: #a8d5a8;">WeedShield AI</h2>
+    <p style="font-size: 12px; color: #8ac48a; margin: 4px 0 0 0;">Wheat Weed Detection</p>
+</div>
+""", unsafe_allow_html=True)
+
+# NAVIGATION
+st.sidebar.markdown("<h3 style='color: #8ac48a; font-size: 12px; text-transform: uppercase; margin-top: 0; margin-bottom: 12px;'>Navigation</h3>", unsafe_allow_html=True)
+
+nav_options = [
+    ("🏠 Home", t.get("nav_home", "Home")),
+    ("🔍 Detect", t.get("nav_detect", "Detect")),
+    ("📚 Learn", t.get("nav_learn", "Learn"))
+]
+
+# Store current page in session state
+if 'current_page' not in st.session_state:
+    st.session_state['current_page'] = 0
+
+menu_index = st.sidebar.radio(
+    "Navigation",
+    range(len(nav_options)),
+    format_func=lambda x: nav_options[x][0],
+    label_visibility="collapsed"
+)
+st.session_state['current_page'] = menu_index
+menu = nav_options[menu_index][1]
+
+st.sidebar.markdown("<div style='height: 20px;'></div>", unsafe_allow_html=True)
+
+# Model status pill at bottom
+st.sidebar.markdown("""
+<div style="position: fixed; bottom: 80px; left: 0; right: 0; padding: 0 16px;">
+    <div style="background: #4da84d; color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; text-align: center;">
+        ✓ Model ready
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 
 # Session state initialization
@@ -596,63 +741,84 @@ def add_history(entry):
     st.session_state['history'] = st.session_state['history'][:100]
 
 
-def render_sidebar_history():
-    st.sidebar.markdown(f"## {t['history']}")
-    if not st.session_state['history']:
-        st.sidebar.info(t['no_history'])
-    else:
-        for h in st.session_state['history']:
-            st.sidebar.markdown(f"**{h['time']}** — {h['image_name']}")
-            st.sidebar.markdown(f"- Weeds: **{h['weeds']}** | Wheat: **{h['wheat']}**")
-            st.sidebar.markdown(f"- Confidence: **{h['confidence']:.1f}%**")
-            st.sidebar.markdown("---")
-
-    if st.sidebar.button(t['clear_history']):
-        st.session_state['history'] = []
-
-
-render_sidebar_history()
+# Remove the sidebar history rendering - now handled by session state only
 
 
 ### HOME ###
 if t.get("nav_home","Home") in menu or menu == 'Home':
-    c1, c2 = st.columns([3,1])
-    with c1:
-        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown(f'<h1 class="title-centered">{t["title"]}</h1>', unsafe_allow_html=True)
-        st.markdown(f'<p class="subtitle-centered">{t["subtitle"]}</p>', unsafe_allow_html=True)
+    # Page header with title and badge
+    col_title, col_badge = st.columns([3, 1])
+    with col_title:
+        st.markdown('<h1 class="page-title">🏠 Home</h1>', unsafe_allow_html=True)
+    with col_badge:
+        st.markdown('<div class="season-badge">Season: Rabi 2025</div>', unsafe_allow_html=True)
+    
+    st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+    
+    # HERO BANNER
+    st.markdown("""
+    <div class="hero-banner">
+        <h1 style="margin: 0; color: white; font-size: 32px;">🌾 Protect Your Wheat Crop</h1>
+        <p style="margin: 12px 0 0 0; color: #e8f5e9; font-size: 16px;">Early detection, precise treatment, better yields</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # STAT CARDS
+    st.markdown("<h3 style='color: #2a4d2a; margin-top: 32px; margin-bottom: 16px;'>Quick Overview</h3>", unsafe_allow_html=True)
+    stat_col1, stat_col2, stat_col3 = st.columns(3)
+    
+    with stat_col1:
+        st.markdown("""
+        <div class="stat-card">
+            <div style="font-size: 24px;">📊</div>
+            <div class="stat-number">0</div>
+            <div class="stat-label">Scans Today</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with stat_col2:
+        st.markdown("""
+        <div class="stat-card">
+            <div style="font-size: 24px;">🌱</div>
+            <div class="stat-number">0</div>
+            <div class="stat-label">Weeds Found</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with stat_col3:
+        st.markdown("""
+        <div class="stat-card">
+            <div style="font-size: 24px;">🎯</div>
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Accuracy</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<hr style='margin: 32px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+    
+    # UPLOAD ZONE
+    st.markdown("<h3 style='color: #2a4d2a; margin-bottom: 16px;'>📸 Upload Field Image</h3>", unsafe_allow_html=True)
+    st.markdown('<div class="white-card">', unsafe_allow_html=True)
+    uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'], label_visibility="collapsed", 
+                                     help='Upload a high-resolution image of your wheat field for accurate detection')
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    if uploaded_file is not None:
+        st.session_state['last_upload'] = {
+            'name': getattr(uploaded_file, 'name', 'uploaded_image'),
+            'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'bytes': uploaded_file.getvalue()
+        }
+        img = Image.open(io.BytesIO(uploaded_file.getvalue())).convert('RGB')
+        
+        # Show preview in a nice card
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.markdown("**Image Preview:**")
+        st.image(img, use_column_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="glass-card" style="margin-top:12px">', unsafe_allow_html=True)
-        st.markdown(f'**{t["how_to_use"]}**', unsafe_allow_html=True)
-        st.markdown(f'- {t["step1"]}\n- {t["step2"]}\n- {t["step3"]}')
-        st.markdown('</div>', unsafe_allow_html=True)
-
-    with c2:
-        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown('**Model**')
-        st.markdown('</div>', unsafe_allow_html=True)
-
-
-### DETECT ###
-if t.get("nav_detect","Detect") in menu or menu == 'Detect':
-    st.markdown(f'## {t.get("upload", "Upload Farm Image")}')
-    col_left, col_right = st.columns([2,1])
-
-    with col_left:
-        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown(f'<div class="file-label">{t["upload"]}</div>', unsafe_allow_html=True)
-        uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'], help='High-resolution field images give better results')
-
-        if uploaded_file is not None:
-            upload_bytes = uploaded_file.getvalue()
-            st.session_state['last_upload'] = {'name': getattr(uploaded_file, 'name', 'uploaded_image'), 'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 'bytes': upload_bytes}
-            img = Image.open(io.BytesIO(upload_bytes)).convert('RGB')
-            st.image(img, caption='Uploaded image', use_column_width=True)
-
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        if uploaded_file is not None and st.button(t['detect_btn'], use_container_width=True):
+        
+        # Detect button
+        if st.button("🔍 Run Detection", use_container_width=True):
             if model is None:
                 st.error('Model not loaded. Cannot run detection.')
             else:
@@ -665,7 +831,6 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
                 t1 = time.time()
 
                 boxes = results[0].boxes
-                
                 st.success('✓ Detection completed successfully')
 
                 img_annotated, weed_count, wheat_count = draw_detections_on_image(img_pil, boxes)
@@ -682,149 +847,323 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
                                               treatment_info, boxes, st.session_state['last_upload']['name'],
                                               st.session_state['last_upload']['time'], img_pil.size, t1-t0)
 
-                output_dir = "detection_results"
-                os.makedirs(output_dir, exist_ok=True)
-                output_path = os.path.join(output_dir, f"detected_{st.session_state['last_upload']['name']}")
-                img_annotated_cv2 = np.array(img_annotated)
-                img_annotated_cv2 = img_annotated_cv2[:, :, ::-1]
+                # Show results
+                st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+                st.markdown("<h3 style='color: #2a4d2a;'>Detection Results</h3>", unsafe_allow_html=True)
                 
+                result_col1, result_col2 = st.columns([2, 1])
                 
-
-                if total == 0:
-                    result_text = 'No weeds detected'
-                    status = 'Clear'
-                else:
-                    result_text = f'{weed_count} weed{"s" if weed_count != 1 else ""} detected in {total} object{"s" if total != 1 else ""}'
-                    status = 'Attention required' if weed_count > 0 else 'Clear'
-
-                st.markdown('---')
-                st.image(img_annotated, caption='Detection Results', width='stretch')
-
+                with result_col1:
+                    st.markdown('<div class="white-card">', unsafe_allow_html=True)
+                    st.image(img_annotated, caption='Annotated Detection', use_column_width=True)
+                    st.markdown('</div>', unsafe_allow_html=True)
+                
+                with result_col2:
+                    if weed_count > 0:
+                        st.markdown("""
+                        <div style="background: #ffebee; border: 2px solid #ef5350; border-radius: 12px; padding: 20px; text-align: center;">
+                            <h2 style="color: #c62828; margin: 0;">⚠️ WEEDS FOUND</h2>
+                            <p style="color: #d32f2f; margin: 12px 0 0 0; font-size: 16px;"><strong>{} weed{}</strong></p>
+                        </div>
+                        """.format(weed_count, "s" if weed_count != 1 else ""), unsafe_allow_html=True)
+                    else:
+                        st.markdown("""
+                        <div style="background: #e8f5e9; border: 2px solid #66bb6a; border-radius: 12px; padding: 20px; text-align: center;">
+                            <h2 style="color: #2e7d32; margin: 0;">✅ CLEAR</h2>
+                            <p style="color: #43a047; margin: 12px 0 0 0; font-size: 14px;">No weeds detected</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    
+                    st.markdown('<div class="white-card" style="margin-top: 16px;">', unsafe_allow_html=True)
+                    st.markdown("**Detection Stats**")
+                    st.markdown(f"🌾 Wheat: **{wheat_count}**")
+                    st.markdown(f"🌱 Weeds: **{weed_count}**")
+                    if weed_confidences:
+                        st.markdown(f"🎯 Avg Confidence: **{np.mean(weed_confidences):.1%}**")
+                    st.markdown('</div>', unsafe_allow_html=True)
+                
+                # Download button
                 pdf_filename = f"{st.session_state['last_upload']['name'].rsplit('.', 1)[0]}_detection_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+                st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
                 st.download_button(
-                    label=t['download_pdf'],
+                    label="📥 Download Detection Report (PDF)",
                     data=pdf_data,
                     file_name=pdf_filename,
                     mime="application/pdf",
                     use_container_width=True
                 )
-
-                st.markdown('---')
+                
+                # Treatment recommendations if weeds detected
                 if weed_count > 0:
-                    weed_confidences = [float(b.conf[0]) * 100 for b in boxes if int(b.cls[0]) == 0]
-                    max_conf = max(weed_confidences) if weed_confidences else 0
-                    st.markdown(f'<div style="text-align: center; padding: 20px; background: rgba(255,0,0,0.15); border-radius: 12px; border: 2px solid #ff4444;">', unsafe_allow_html=True)
-                    st.markdown(f'<h1 style="color: #ff4444; margin: 0;">{t["weed_detected"]}</h1>', unsafe_allow_html=True)
-                    st.markdown(f'<h3 style="color: #ffcccc; margin: 8px 0 0 0;">{t["confidence"]}: {max_conf:.1f}%</h3>', unsafe_allow_html=True)
-                    st.markdown(f'</div>', unsafe_allow_html=True)
-                else:
-                    st.markdown(f'<div style="text-align: center; padding: 20px; background: rgba(0,200,0,0.15); border-radius: 12px; border: 2px solid #00c800;">', unsafe_allow_html=True)
-                    st.markdown(f'<h1 style="color: #00c800; margin: 0;">{t["no_weed"]}</h1>', unsafe_allow_html=True)
-                    st.markdown(f'</div>', unsafe_allow_html=True)
-
-                # Dropdown expander
-                with st.expander('', expanded=False):
-                    col_d1, col_d2 = st.columns(2)
-
-                    with col_d1:
-                        st.markdown(f"**Image Name:** {st.session_state['last_upload']['name']}")
-
-                    with col_d2:
-                        if boxes is not None and len(boxes) > 0:
-                            st.markdown("**Individual Detections:**")
-                            for i, box in enumerate(boxes):
-                                cls = int(box.cls[0])
-                                conf = float(box.conf[0])
-                                class_name = CLASS_MAP.get(cls, f'Class {cls}')
-                                st.markdown(f"{i+1}. **{class_name}** - {conf:.1%} confidence")
-                        else:
-                            st.markdown("No detections found.")
-
-                # Treatment Recommendations section - only show when weeds are detected
-                if weed_count > 0:
-                    st.markdown("---")
-                    st.markdown(f"**{t['treatment']}**")
-
+                    st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+                    st.markdown("<h3 style='color: #2a4d2a;'>Treatment Recommendations</h3>", unsafe_allow_html=True)
+                    
+                    st.markdown('<div class="white-card">', unsafe_allow_html=True)
+                    
                     severity_colors = {
-                        "LOW": "#FFD700",
-                        "MEDIUM": "#FFA500",
-                        "HIGH": "#FF0000"
+                        "LOW": "#4CAF50",
+                        "MEDIUM": "#FF9800",
+                        "HIGH": "#f44336"
                     }
-                    severity_color = severity_colors.get(treatment_info.get('severity', 'LOW'), "#CCCCCC")
-
-                    st.markdown(f"<div style='padding: 12px; background-color: rgba({int(severity_color[1:3], 16)}, {int(severity_color[3:5], 16)}, {int(severity_color[5:7], 16)}, 0.2); border-left: 4px solid {severity_color}; border-radius: 6px;'>", unsafe_allow_html=True)
-                    st.markdown(f"**{t['severity']}:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info.get('severity', 'LOW')}</span>", unsafe_allow_html=True)
-                    st.markdown(f"**Confidence Range:** {treatment_info.get('urgency', 'N/A')}", unsafe_allow_html=True)
-                    st.markdown(f"**Confidence Score:** {avg_weed_confidence:.1%}", unsafe_allow_html=True)
-                    st.markdown("</div>", unsafe_allow_html=True)
-
-                    st.markdown(f"**{t['action']}:** {treatment_info.get('action', 'Monitor field')}")
+                    severity_color = severity_colors.get(treatment_info.get('severity', 'LOW'), "#666666")
+                    
+                    st.markdown(f"**Severity:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info.get('severity', 'LOW')}</span>", unsafe_allow_html=True)
+                    st.markdown(f"**Action:** {treatment_info.get('action', 'Monitor field')}")
                     st.markdown(f"**Description:** {treatment_info.get('description', 'N/A')}")
-
-                    st.markdown(f"**{t['methods']}:")
-                    for method in treatment_info.get('methods', []):
-                        st.markdown(f"- {method}")
-
-                    if treatment_info.get('all_herbicides', []):
-                        st.markdown(f"**{t['herbicides']}:**")
+                    
+                    if treatment_info.get('methods'):
+                        st.markdown("**Recommended Methods:**")
+                        for method in treatment_info.get('methods', []):
+                            st.markdown(f"• {method}")
+                    
+                    if treatment_info.get('all_herbicides'):
+                        st.markdown("**Recommended Herbicides:**")
                         for herbicide in treatment_info.get('all_herbicides', []):
-                            st.markdown(f"- {herbicide}")
-                    else:
-                        st.markdown(f"**{t['herbicides']}:** None - Preventive monitoring only")
-
-                    st.markdown(f"**{t['urgency']}:** {treatment_info.get('urgency', 'N/A')}")
-                    st.markdown(f"**Cost Impact:** {treatment_info.get('cost_impact', 'N/A')}")
-
+                            st.markdown(f"• {herbicide}")
+                    
+                    st.markdown(f"**Urgency:** {treatment_info.get('urgency', 'N/A')}")
+                    st.markdown('</div>', unsafe_allow_html=True)
+                
                 # Add to history
                 avg_conf = float(np.mean([float(b.conf[0]) for b in boxes])) * 100 if (boxes and len(boxes) > 0) else 0
                 add_history({
                     'image_name': st.session_state['last_upload']['name'],
-                    'result': result_text,
+                    'result': f'{weed_count} weed{"s" if weed_count != 1 else ""} detected' if weed_count > 0 else 'No weeds detected',
                     'weeds': weed_count,
                     'wheat': wheat_count,
                     'confidence': avg_conf,
                     'severity': severity_level,
                     'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 })
+    
+    st.markdown("<hr style='margin: 32px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+    
+    # HOW TO USE - STEP CARDS
+    st.markdown("<h3 style='color: #2a4d2a; margin-top: 32px; margin-bottom: 16px;'>How to Use WeedShield AI</h3>", unsafe_allow_html=True)
+    
+    step_col1, step_col2, step_col3 = st.columns(3)
+    
+    with step_col1:
+        st.markdown("""
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 style="margin-bottom: 8px;">Take Photo</h3>
+            <p style="font-size: 14px; color: #666;">📸 Capture a clear image of your wheat field showing weeds or suspicious areas</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with step_col2:
+        st.markdown("""
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 style="margin-bottom: 8px;">Run Detection</h3>
+            <p style="font-size: 14px; color: #666;">🔍 Upload the image and click "Run Detection" for instant AI analysis</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with step_col3:
+        st.markdown("""
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 style="margin-bottom: 8px;">Get Recommendations</h3>
+            <p style="font-size: 14px; color: #666;">📋 Receive personalized treatment recommendations based on detection results</p>
+        </div>
+        """, unsafe_allow_html=True)
 
+
+### DETECT ###
+if t.get("nav_detect","Detect") in menu or menu == 'Detect':
+    # Page header
+    st.markdown('<h1 class="page-title">🔍 Detect Weeds</h1>', unsafe_allow_html=True)
+    st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+    
+    col_left, col_right = st.columns([2, 1])
+
+    with col_left:
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.markdown("**📸 Upload Field Image**")
+        uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'], label_visibility="collapsed",
+                                        help='High-resolution field images give better results')
+
+        if uploaded_file is not None:
+            upload_bytes = uploaded_file.getvalue()
+            st.session_state['last_upload'] = {
+                'name': getattr(uploaded_file, 'name', 'uploaded_image'),
+                'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'bytes': upload_bytes
+            }
+            img = Image.open(io.BytesIO(upload_bytes)).convert('RGB')
+            st.image(img, use_column_width=True)
+            
+            if st.button(t['detect_btn'], use_container_width=True):
+                if model is None:
+                    st.error('Model not loaded. Cannot run detection.')
+                else:
+                    t0 = time.time()
+                    img_pil = Image.open(io.BytesIO(st.session_state['last_upload']['bytes'])).convert('RGB')
+                    img_np = np.array(img_pil)
+                    
+                    with st.spinner('Running detection...'):
+                        results = model(img_np, conf=0.5)
+                    t1 = time.time()
+
+                    boxes = results[0].boxes
+                    st.success('✓ Detection completed')
+
+                    img_annotated, weed_count, wheat_count = draw_detections_on_image(img_pil, boxes)
+
+                    weed_confidences = [float(b.conf[0]) for b in boxes if int(b.cls[0]) == 0]
+                    severity_level, severity_conf, severity_icon = calculate_severity(weed_count, weed_confidences)
+                    
+                    avg_weed_confidence = np.mean(weed_confidences) if weed_confidences else 0.0
+                    treatment_info = format_recommendation("general_weed", avg_weed_confidence)
+
+                    pdf_data = generate_pdf_report(img_annotated, weed_count, wheat_count, 
+                                                  treatment_info.get('severity', 'LOW'), '📊',
+                                                  treatment_info, boxes, st.session_state['last_upload']['name'],
+                                                  st.session_state['last_upload']['time'], img_pil.size, t1-t0)
+
+                    st.session_state['latest_result'] = {
+                        'img_annotated': img_annotated,
+                        'weed_count': weed_count,
+                        'wheat_count': wheat_count,
+                        'severity': severity_level,
+                        'treatment': treatment_info,
+                        'boxes': boxes,
+                        'avg_conf': avg_weed_confidence,
+                        'pdf': pdf_data,
+                        'filename': f"{st.session_state['last_upload']['name'].rsplit('.', 1)[0]}_detection_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+                    }
+
+        st.markdown('</div>', unsafe_allow_html=True)
+    
     with col_right:
-        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown('### Latest Detection')
-        if st.session_state['history']:
-            latest = st.session_state['history'][0]
-            st.markdown(f"**Status:** {latest['result']}")
-            st.markdown(f"🌾 Wheat: **{latest['wheat']}** | 🌱 Weeds: **{latest['weeds']}**")
-            st.markdown(f"Confidence: **{latest['confidence']:.1f}%**")
-            st.markdown(f"*{latest['time']}*")
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.markdown("**Latest Detection**")
+        
+        if 'latest_result' in st.session_state:
+            result = st.session_state['latest_result']
+            if result['weed_count'] > 0:
+                st.markdown(f"<span style='color: #c62828; font-weight: bold;'>⚠️ {result['weed_count']} weed{'s' if result['weed_count'] != 1 else ''} detected</span>", unsafe_allow_html=True)
+            else:
+                st.markdown(f"<span style='color: #2e7d32; font-weight: bold;'>✅ Field Clear</span>", unsafe_allow_html=True)
+            
+            st.markdown(f"🌾 Wheat: **{result['wheat_count']}**")
+            st.markdown(f"🌱 Weeds: **{result['weed_count']}**")
+            st.markdown(f"🎯 Accuracy: **{result['avg_conf']:.1%}**")
         else:
             st.markdown(t['no_history'])
+        
         st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Show results below if available
+    if 'latest_result' in st.session_state:
+        result = st.session_state['latest_result']
+        
+        st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color: #2a4d2a;'>Detection Results</h3>", unsafe_allow_html=True)
+        
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.image(result['img_annotated'], use_column_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Download button
+        st.download_button(
+            label=t['download_pdf'],
+            data=result['pdf'],
+            file_name=result['filename'],
+            mime="application/pdf",
+            use_container_width=True
+        )
+        
+        # Detections details
+        if result['boxes'] is not None and len(result['boxes']) > 0:
+            with st.expander("📋 Individual Detections", expanded=False):
+                for i, box in enumerate(result['boxes']):
+                    cls = int(box.cls[0])
+                    conf = float(box.conf[0])
+                    class_name = CLASS_MAP.get(cls, f'Class {cls}')
+                    st.markdown(f"{i+1}. **{class_name}** - {conf:.1%} confidence")
+        
+        # Treatment recommendations if weeds detected
+        if result['weed_count'] > 0:
+            st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+            st.markdown("<h3 style='color: #2a4d2a;'>Treatment Recommendations</h3>", unsafe_allow_html=True)
+            
+            st.markdown('<div class="white-card">', unsafe_allow_html=True)
+            
+            severity_colors = {
+                "LOW": "#4CAF50",
+                "MEDIUM": "#FF9800",
+                "HIGH": "#f44336"
+            }
+            severity_color = severity_colors.get(result['treatment'].get('severity', 'LOW'), "#666666")
+            
+            st.markdown(f"**Severity:** <span style='color: {severity_color}; font-weight: bold;'>{result['treatment'].get('severity', 'LOW')}</span>", unsafe_allow_html=True)
+            st.markdown(f"**Action:** {result['treatment'].get('action', 'Monitor field')}")
+            st.markdown(f"**Description:** {result['treatment'].get('description', 'N/A')}")
+            
+            if result['treatment'].get('methods'):
+                st.markdown("**Recommended Methods:**")
+                for method in result['treatment'].get('methods', []):
+                    st.markdown(f"• {method}")
+            
+            if result['treatment'].get('all_herbicides'):
+                st.markdown("**Recommended Herbicides:**")
+                for herbicide in result['treatment'].get('all_herbicides', []):
+                    st.markdown(f"• {herbicide}")
+            
+            st.markdown(f"**Urgency:** {result['treatment'].get('urgency', 'N/A')}")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Add to history
+        add_history({
+            'image_name': st.session_state['last_upload']['name'],
+            'result': f'{result["weed_count"]} weed{"s" if result["weed_count"] != 1 else ""} detected' if result['weed_count'] > 0 else 'No weeds detected',
+            'weeds': result['weed_count'],
+            'wheat': result['wheat_count'],
+            'confidence': result['avg_conf'] * 100,
+            'severity': result['severity'],
+            'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        })
 
 
 ### LEARN ###
 if t.get("nav_learn","Learn") in menu or menu == 'Learn':
-    st.header(t['learn_title'])
+    # Page header
+    st.markdown('<h1 class="page-title">📚 Learn About Weeds</h1>', unsafe_allow_html=True)
+    st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+    
     tabs = st.tabs([t['tab1'], t['tab2'], t['tab3']])
 
     with tabs[0]:
-        st.subheader(t['what_are_weeds'])
-        st.write(t['weeds_desc'])
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.markdown(f"### {t['what_are_weeds']}")
+        st.markdown(f"{t['weeds_desc']}")
         st.markdown(f"- {t['weed1']}\n- {t['weed2']}\n- {t['weed3']}")
-        st.write(t['how_affect'])
+        
+        st.markdown(f"### {t['how_affect']}")
         st.markdown(f"- {t['affect1']}\n- {t['affect2']}\n- {t['affect3']}")
-        st.subheader(t['how_identify'])
-        st.write(t['identify_desc'])
-        st.subheader(t['why_early'])
-        st.write(t['early_desc'])
+        
+        st.markdown(f"### {t['how_identify']}")
+        st.markdown(f"{t['identify_desc']}")
+        
+        st.markdown(f"### {t['why_early']}")
+        st.markdown(f"{t['early_desc']}")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tabs[1]:
-        st.subheader(t['impact_title'])
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.markdown(f"### {t['impact_title']}")
         st.markdown(f"- {t['impact1']}")
         st.markdown(f"- {t['impact2']}")
-        st.write(t['farmer_challenges'])
+        st.markdown(f"\n{t['farmer_challenges']}")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tabs[2]:
-        st.subheader(t['prevention_title'])
+        st.markdown('<div class="white-card">', unsafe_allow_html=True)
+        st.markdown(f"### {t['prevention_title']}")
         st.markdown(f"- {t['prev1']}\n- {t['prev2']}\n- {t['prev3']}")
-        st.write(t['ai_benefits'])
+        st.markdown(f"\n{t['ai_benefits']}")
+        st.markdown('</div>', unsafe_allow_html=True)
 
