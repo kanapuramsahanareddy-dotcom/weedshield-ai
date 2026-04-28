@@ -65,7 +65,45 @@ TRANSLATIONS = {
         "nav_home": "🏠 Home",
         "nav_detect": "🔍 Detect",
         "nav_learn": "📚 Learn",
-        "model_ready": "✓ Ready"
+        "model_ready": "✓ Model ready",
+        "hero_title": "Protect Your Wheat Crop",
+        "hero_subtitle": "Early detection, precise treatment, better yields",
+        "quick_overview": "Quick Overview",
+        "scans_today": "Scans Today",
+        "weeds_found": "Weeds Found",
+        "accuracy": "Accuracy",
+        "how_to_use_title": "How to Use WeedShield AI",
+        "step1_title": "Take Photo",
+        "step1_desc": "Capture a clear image of your wheat field showing weeds or suspicious areas",
+        "step2_title": "Run Detection",
+        "step2_desc": "Upload the image and click Run Detection for instant AI analysis",
+        "step3_title": "Get Results",
+        "step3_desc": "Receive personalized treatment recommendations based on detection results",
+        "season_badge": "Season: Rabi 2025",
+        "latest_detection": "Latest Detection",
+        "no_detections": "No detections yet",
+        "field_clear": "Field Clear",
+        "detection_stats": "Detection Stats",
+        "wheat_label": "Wheat",
+        "weeds_label": "Weeds",
+        "avg_confidence": "Avg Confidence",
+        "image_preview": "Image Preview",
+        "upload_field_image": "📸 Upload Field Image",
+        "individual_detections": "📋 Individual Detections",
+        "detection_results": "Detection Results",
+        "treatment_recommendations": "Treatment Recommendations",
+        "weeds_found_title": "⚠️ WEEDS FOUND",
+        "clear_title": "✅ CLEAR",
+        "no_weeds_detected": "No weeds detected",
+        "run_detection_btn": "🔍 Run Detection",
+        "detect_weeds_title": "🔍 Detect Weeds",
+        "learn_about_weeds": "📚 Learn About Weeds",
+        "model_not_loaded": "Model not loaded",
+        "cannot_run_detection": "Cannot run detection",
+        "running_detection": "Running detection...",
+        "detection_completed_success": "✓ Detection completed successfully",
+        "detection_completed": "✓ Detection completed",
+        "home_title": "🏠 Home"
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -118,7 +156,45 @@ TRANSLATIONS = {
         "nav_home": "🏠 హోమ్",
         "nav_detect": "🔍 గుర్తించు",
         "nav_learn": "📚 నేర్చుకోండి",
-        "model_ready": "✓ సిద్ధంగా ఉంది"
+        "model_ready": "✓ సిద్ధంగా ఉంది",
+        "hero_title": "మీ గోధుమ పంటను రక్షించండి",
+        "hero_subtitle": "ముందస్తు గుర్తింపు, ఖచ్చితమైన చికిత్స, మెరుగైన దిగుబడి",
+        "quick_overview": "శీఘ్ర అవలోకనం",
+        "scans_today": "నేటి స్కాన్లు",
+        "weeds_found": "కలుపు మొక్కలు",
+        "accuracy": "ఖచ్చితత్వం",
+        "how_to_use_title": "WeedShield AI ఎలా వాడాలి",
+        "step1_title": "ఫోటో తీయండి",
+        "step1_desc": "మీ గోధుమ పొలం యొక్క స్పష్టమైన చిత్రాన్ని తీయండి",
+        "step2_title": "గుర్తింపు నడపండి",
+        "step2_desc": "చిత్రాన్ని అప్లోడ్ చేసి గుర్తింపు నడపండి",
+        "step3_title": "ఫలితాలు పొందండి",
+        "step3_desc": "చికిత్స సిఫార్సులు అందుకోండి",
+        "season_badge": "సీజన్: రబీ 2025",
+        "latest_detection": "తాజా గుర్తింపు",
+        "no_detections": "ఇంకా గుర్తింపులు లేవు",
+        "field_clear": "ఖాళీ ఫీల్డ్",
+        "detection_stats": "గుర్తింపు గణాంకాలు",
+        "wheat_label": "గోధుమ",
+        "weeds_label": "కలుపు",
+        "avg_confidence": "సగటు నమ్మకం",
+        "image_preview": "ఇమేజ్ ప్రివ్యూ",
+        "upload_field_image": "📸 ఫీల్డ్ చిత్రం అప్‌లోడ్ చేయండి",
+        "individual_detections": "📋 వ్యక్తిగత గుర్తింపులు",
+        "detection_results": "గుర్తింపు ఫలితాలు",
+        "treatment_recommendations": "చికిత్స సిఫార్సులు",
+        "weeds_found_title": "⚠️ కలుపు మిळెను",
+        "clear_title": "✅ ఖాళీ",
+        "no_weeds_detected": "కలుపు మొక్కలు గుర్తించబడలేదు",
+        "run_detection_btn": "🔍 గుర్తింపు చలాయించండి",
+        "detect_weeds_title": "🔍 కలుపు గుర్తించండి",
+        "learn_about_weeds": "📚 నేర్చుకోండి",
+        "model_not_loaded": "మోడల్ లోడ్ చేయబడలేదు",
+        "cannot_run_detection": "గుర్తింపు చలాయించలేము",
+        "running_detection": "గుర్తింపు నడుస్తోంది...",
+        "detection_completed_success": "✓ గుర్తింపు విజయవంతమైనది",
+        "detection_completed": "✓ గుర్తింపు పూర్తైనది",
+        "home_title": "🏠 హోమ్"
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -171,7 +247,45 @@ TRANSLATIONS = {
         "nav_home": "🏠 होम",
         "nav_detect": "🔍 पहचानें",
         "nav_learn": "📚 सीखें",
-        "model_ready": "✓ तैयार है"
+        "model_ready": "✓ तैयार है",
+        "hero_title": "अपनी गेहूं की फसल बचाएं",
+        "hero_subtitle": "जल्दी पहचान, सटीक उपचार, बेहतर उपज",
+        "quick_overview": "त्वरित अवलोकन",
+        "scans_today": "आज के स्कैन",
+        "weeds_found": "खरपतवार मिले",
+        "accuracy": "सटीकता",
+        "how_to_use_title": "WeedShield AI कैसे उपयोग करें",
+        "step1_title": "फोटो लें",
+        "step1_desc": "अपने गेहूं के खेत की स्पष्ट तस्वीर लें",
+        "step2_title": "जांच करें",
+        "step2_desc": "छवि अपलोड करें और जांच चलाएं",
+        "step3_title": "परिणाम पाएं",
+        "step3_desc": "उपचार की सिफारिशें प्राप्त करें",
+        "season_badge": "मौसम: रबी 2025",
+        "latest_detection": "नवीनतम जांच",
+        "no_detections": "अभी तक कोई जांच नहीं",
+        "field_clear": "खेत स्पष्ट",
+        "detection_stats": "जांच आंकड़े",
+        "wheat_label": "गेहूं",
+        "weeds_label": "खरपतवार",
+        "avg_confidence": "औसत आत्मविश्वास",
+        "image_preview": "छवि पूर्वावलोकन",
+        "upload_field_image": "📸 खेत की छवि अपलोड करें",
+        "individual_detections": "📋 व्यक्तिगत जांच",
+        "detection_results": "जांच परिणाम",
+        "treatment_recommendations": "उपचार की सिफारिशें",
+        "weeds_found_title": "⚠️ खरपतवार मिले",
+        "clear_title": "✅ स्पष्ट",
+        "no_weeds_detected": "कोई खरपतवार पहचाना नहीं गया",
+        "run_detection_btn": "🔍 जांच चलाएं",
+        "detect_weeds_title": "🔍 खरपतवार पहचानें",
+        "learn_about_weeds": "📚 सीखें",
+        "model_not_loaded": "मॉडल लोड नहीं हुआ",
+        "cannot_run_detection": "जांच नहीं चला सकते",
+        "running_detection": "जांच चल रही है...",
+        "detection_completed_success": "✓ जांच सफलतापूर्वक पूरी हुई",
+        "detection_completed": "✓ जांच पूरी हुई",
+        "home_title": "🏠 होम"
     }
 }
 
@@ -329,6 +443,15 @@ p, li, span, div {
 .step-card h3 {
     margin-top: 12px !important;
     margin-bottom: 8px !important;
+    font-size: 16px !important;
+}
+
+.step-card p {
+    font-size: 13px !important;
+    min-height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /* UPLOAD ZONE */
@@ -717,14 +840,12 @@ menu_index = st.sidebar.radio(
 st.session_state['current_page'] = menu_index
 menu = nav_options[menu_index][1]
 
-st.sidebar.markdown("<div style='height: 20px;'></div>", unsafe_allow_html=True)
+st.sidebar.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
 
-# Model status pill at bottom
-st.sidebar.markdown("""
-<div style="position: fixed; bottom: 80px; left: 0; right: 0; padding: 0 16px;">
-    <div style="background: #4da84d; color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; text-align: center;">
-        ✓ Model ready
-    </div>
+# Model status pill in sidebar
+st.sidebar.markdown(f"""
+<div style="background: #4da84d; color: white; padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 600; text-align: center;">
+    ✓ {t.get('model_ready', 'Model ready')}
 </div>
 """, unsafe_allow_html=True)
 
@@ -749,224 +870,82 @@ if t.get("nav_home","Home") in menu or menu == 'Home':
     # Page header with title and badge
     col_title, col_badge = st.columns([3, 1])
     with col_title:
-        st.markdown('<h1 class="page-title">🏠 Home</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 class="page-title">{t.get("home_title", "🏠 Home")}</h1>', unsafe_allow_html=True)
     with col_badge:
-        st.markdown('<div class="season-badge">Season: Rabi 2025</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="season-badge">{t.get("season_badge", "Season: Rabi 2025")}</div>', unsafe_allow_html=True)
     
     st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
     
     # HERO BANNER
-    st.markdown("""
+    st.markdown(f"""
     <div class="hero-banner">
-        <h1 style="margin: 0; color: white; font-size: 32px;">🌾 Protect Your Wheat Crop</h1>
-        <p style="margin: 12px 0 0 0; color: #e8f5e9; font-size: 16px;">Early detection, precise treatment, better yields</p>
+        <h1 style="margin: 0; color: #ffffff; font-size: 32px;">🌾 {t.get('hero_title', 'Protect Your Wheat Crop')}</h1>
+        <p style="margin: 12px 0 0 0; color: rgba(255,255,255,0.8); font-size: 16px;">{t.get('hero_subtitle', 'Early detection, precise treatment, better yields')}</p>
     </div>
     """, unsafe_allow_html=True)
     
     # STAT CARDS
-    st.markdown("<h3 style='color: #2a4d2a; margin-top: 32px; margin-bottom: 16px;'>Quick Overview</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='color: #2a4d2a; margin-top: 32px; margin-bottom: 16px;'>{t.get('quick_overview', 'Quick Overview')}</h3>", unsafe_allow_html=True)
     stat_col1, stat_col2, stat_col3 = st.columns(3)
     
     with stat_col1:
-        st.markdown("""
+        st.markdown(f"""
         <div class="stat-card">
             <div style="font-size: 24px;">📊</div>
             <div class="stat-number">0</div>
-            <div class="stat-label">Scans Today</div>
+            <div class="stat-label">{t.get('scans_today', 'Scans Today')}</div>
         </div>
         """, unsafe_allow_html=True)
     
     with stat_col2:
-        st.markdown("""
+        st.markdown(f"""
         <div class="stat-card">
             <div style="font-size: 24px;">🌱</div>
             <div class="stat-number">0</div>
-            <div class="stat-label">Weeds Found</div>
+            <div class="stat-label">{t.get('weeds_found', 'Weeds Found')}</div>
         </div>
         """, unsafe_allow_html=True)
     
     with stat_col3:
-        st.markdown("""
+        st.markdown(f"""
         <div class="stat-card">
             <div style="font-size: 24px;">🎯</div>
             <div class="stat-number">98%</div>
-            <div class="stat-label">Accuracy</div>
+            <div class="stat-label">{t.get('accuracy', 'Accuracy')}</div>
         </div>
         """, unsafe_allow_html=True)
     
     st.markdown("<hr style='margin: 32px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
     
-    # UPLOAD ZONE
-    st.markdown("<h3 style='color: #2a4d2a; margin-bottom: 16px;'>📸 Upload Field Image</h3>", unsafe_allow_html=True)
-    st.markdown('<div class="white-card">', unsafe_allow_html=True)
-    uploaded_file = st.file_uploader('', type=['jpg', 'jpeg', 'png'], label_visibility="collapsed", 
-                                     help='Upload a high-resolution image of your wheat field for accurate detection')
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    if uploaded_file is not None:
-        st.session_state['last_upload'] = {
-            'name': getattr(uploaded_file, 'name', 'uploaded_image'),
-            'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'bytes': uploaded_file.getvalue()
-        }
-        img = Image.open(io.BytesIO(uploaded_file.getvalue())).convert('RGB')
-        
-        # Show preview in a nice card
-        st.markdown('<div class="white-card">', unsafe_allow_html=True)
-        st.markdown("**Image Preview:**")
-        st.image(img, use_column_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-        
-        # Detect button
-        if st.button("🔍 Run Detection", use_container_width=True):
-            if model is None:
-                st.error('Model not loaded. Cannot run detection.')
-            else:
-                t0 = time.time()
-                img_pil = Image.open(io.BytesIO(st.session_state['last_upload']['bytes'])).convert('RGB')
-                img_np = np.array(img_pil)
-                
-                with st.spinner('Running detection...'):
-                    results = model(img_np, conf=0.5)
-                t1 = time.time()
-
-                boxes = results[0].boxes
-                st.success('✓ Detection completed successfully')
-
-                img_annotated, weed_count, wheat_count = draw_detections_on_image(img_pil, boxes)
-                total = weed_count + wheat_count
-
-                weed_confidences = [float(b.conf[0]) for b in boxes if int(b.cls[0]) == 0]
-                severity_level, severity_conf, severity_icon = calculate_severity(weed_count, weed_confidences)
-                
-                avg_weed_confidence = np.mean(weed_confidences) if weed_confidences else 0.0
-                treatment_info = format_recommendation("general_weed", avg_weed_confidence)
-
-                pdf_data = generate_pdf_report(img_annotated, weed_count, wheat_count, 
-                                              treatment_info.get('severity', 'LOW'), '📊',
-                                              treatment_info, boxes, st.session_state['last_upload']['name'],
-                                              st.session_state['last_upload']['time'], img_pil.size, t1-t0)
-
-                # Show results
-                st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-                st.markdown("<h3 style='color: #2a4d2a;'>Detection Results</h3>", unsafe_allow_html=True)
-                
-                result_col1, result_col2 = st.columns([2, 1])
-                
-                with result_col1:
-                    st.markdown('<div class="white-card">', unsafe_allow_html=True)
-                    st.image(img_annotated, caption='Annotated Detection', use_column_width=True)
-                    st.markdown('</div>', unsafe_allow_html=True)
-                
-                with result_col2:
-                    if weed_count > 0:
-                        st.markdown("""
-                        <div style="background: #ffebee; border: 2px solid #ef5350; border-radius: 12px; padding: 20px; text-align: center;">
-                            <h2 style="color: #c62828; margin: 0;">⚠️ WEEDS FOUND</h2>
-                            <p style="color: #d32f2f; margin: 12px 0 0 0; font-size: 16px;"><strong>{} weed{}</strong></p>
-                        </div>
-                        """.format(weed_count, "s" if weed_count != 1 else ""), unsafe_allow_html=True)
-                    else:
-                        st.markdown("""
-                        <div style="background: #e8f5e9; border: 2px solid #66bb6a; border-radius: 12px; padding: 20px; text-align: center;">
-                            <h2 style="color: #2e7d32; margin: 0;">✅ CLEAR</h2>
-                            <p style="color: #43a047; margin: 12px 0 0 0; font-size: 14px;">No weeds detected</p>
-                        </div>
-                        """, unsafe_allow_html=True)
-                    
-                    st.markdown('<div class="white-card" style="margin-top: 16px;">', unsafe_allow_html=True)
-                    st.markdown("**Detection Stats**")
-                    st.markdown(f"🌾 Wheat: **{wheat_count}**")
-                    st.markdown(f"🌱 Weeds: **{weed_count}**")
-                    if weed_confidences:
-                        st.markdown(f"🎯 Avg Confidence: **{np.mean(weed_confidences):.1%}**")
-                    st.markdown('</div>', unsafe_allow_html=True)
-                
-                # Download button
-                pdf_filename = f"{st.session_state['last_upload']['name'].rsplit('.', 1)[0]}_detection_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
-                st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-                st.download_button(
-                    label="📥 Download Detection Report (PDF)",
-                    data=pdf_data,
-                    file_name=pdf_filename,
-                    mime="application/pdf",
-                    use_container_width=True
-                )
-                
-                # Treatment recommendations if weeds detected
-                if weed_count > 0:
-                    st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-                    st.markdown("<h3 style='color: #2a4d2a;'>Treatment Recommendations</h3>", unsafe_allow_html=True)
-                    
-                    st.markdown('<div class="white-card">', unsafe_allow_html=True)
-                    
-                    severity_colors = {
-                        "LOW": "#4CAF50",
-                        "MEDIUM": "#FF9800",
-                        "HIGH": "#f44336"
-                    }
-                    severity_color = severity_colors.get(treatment_info.get('severity', 'LOW'), "#666666")
-                    
-                    st.markdown(f"**Severity:** <span style='color: {severity_color}; font-weight: bold;'>{treatment_info.get('severity', 'LOW')}</span>", unsafe_allow_html=True)
-                    st.markdown(f"**Action:** {treatment_info.get('action', 'Monitor field')}")
-                    st.markdown(f"**Description:** {treatment_info.get('description', 'N/A')}")
-                    
-                    if treatment_info.get('methods'):
-                        st.markdown("**Recommended Methods:**")
-                        for method in treatment_info.get('methods', []):
-                            st.markdown(f"• {method}")
-                    
-                    if treatment_info.get('all_herbicides'):
-                        st.markdown("**Recommended Herbicides:**")
-                        for herbicide in treatment_info.get('all_herbicides', []):
-                            st.markdown(f"• {herbicide}")
-                    
-                    st.markdown(f"**Urgency:** {treatment_info.get('urgency', 'N/A')}")
-                    st.markdown('</div>', unsafe_allow_html=True)
-                
-                # Add to history
-                avg_conf = float(np.mean([float(b.conf[0]) for b in boxes])) * 100 if (boxes and len(boxes) > 0) else 0
-                add_history({
-                    'image_name': st.session_state['last_upload']['name'],
-                    'result': f'{weed_count} weed{"s" if weed_count != 1 else ""} detected' if weed_count > 0 else 'No weeds detected',
-                    'weeds': weed_count,
-                    'wheat': wheat_count,
-                    'confidence': avg_conf,
-                    'severity': severity_level,
-                    'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                })
-    
-    st.markdown("<hr style='margin: 32px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-    
-    # HOW TO USE - STEP CARDS
-    st.markdown("<h3 style='color: #2a4d2a; margin-top: 32px; margin-bottom: 16px;'>How to Use WeedShield AI</h3>", unsafe_allow_html=True)
+    # HOW TO USE - STEP CARDS (moved up, upload removed from home)
+    st.markdown(f"<h3 style='color: #2a4d2a; margin-top: 32px; margin-bottom: 16px;'>{t.get('how_to_use_title', 'How to Use WeedShield AI')}</h3>", unsafe_allow_html=True)
     
     step_col1, step_col2, step_col3 = st.columns(3)
     
     with step_col1:
-        st.markdown("""
+        st.markdown(f"""
         <div class="step-card">
             <div class="step-number">1</div>
-            <h3 style="margin-bottom: 8px;">Take Photo</h3>
-            <p style="font-size: 14px; color: #666;">📸 Capture a clear image of your wheat field showing weeds or suspicious areas</p>
+            <h3 style="margin-bottom: 8px;">{t.get('step1_title', 'Take Photo')}</h3>
+            <p style="font-size: 13px; color: #666;">{t.get('step1_desc', 'Capture a clear image of your wheat field showing weeds or suspicious areas')}</p>
         </div>
         """, unsafe_allow_html=True)
     
     with step_col2:
-        st.markdown("""
+        st.markdown(f"""
         <div class="step-card">
             <div class="step-number">2</div>
-            <h3 style="margin-bottom: 8px;">Run Detection</h3>
-            <p style="font-size: 14px; color: #666;">🔍 Upload the image and click "Run Detection" for instant AI analysis</p>
+            <h3 style="margin-bottom: 8px;">{t.get('step2_title', 'Run Detection')}</h3>
+            <p style="font-size: 13px; color: #666;">{t.get('step2_desc', 'Upload the image and click Run Detection for instant AI analysis')}</p>
         </div>
         """, unsafe_allow_html=True)
     
     with step_col3:
-        st.markdown("""
+        st.markdown(f"""
         <div class="step-card">
             <div class="step-number">3</div>
-            <h3 style="margin-bottom: 8px;">Get Recommendations</h3>
-            <p style="font-size: 14px; color: #666;">📋 Receive personalized treatment recommendations based on detection results</p>
+            <h3 style="margin-bottom: 8px;">{t.get('step3_title', 'Get Results')}</h3>
+            <p style="font-size: 13px; color: #666;">{t.get('step3_desc', 'Receive personalized treatment recommendations based on detection results')}</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -974,7 +953,7 @@ if t.get("nav_home","Home") in menu or menu == 'Home':
 ### DETECT ###
 if t.get("nav_detect","Detect") in menu or menu == 'Detect':
     # Page header
-    st.markdown('<h1 class="page-title">🔍 Detect Weeds</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 class="page-title">{t.get("detect_weeds_title", "🔍 Detect Weeds")}</h1>', unsafe_allow_html=True)
     st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
     
     col_left, col_right = st.columns([2, 1])
