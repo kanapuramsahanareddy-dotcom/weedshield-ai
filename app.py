@@ -128,7 +128,8 @@ TRANSLATIONS = {
         "urgency_label": "Urgency",
         "action_label": "Recommended Action",
         "about_weed": "About this Weed",
-        "weeds_detected": "weeds detected"
+        "weeds_detected": "weeds detected",
+        "app_desc": "Weed Detection and Prevention in Wheat Crop Using AI"
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -244,7 +245,8 @@ TRANSLATIONS = {
         "urgency_label": "అత్యవసరత",
         "action_label": "సిఫార్సు చేయిన చర్య",
         "about_weed": "ఈ కలుపు మిళెను గురించి",
-        "weeds_detected": "కలుపు మొక్కలు గుర్తించబడ్డాయి"
+        "weeds_detected": "కలుపు మొక్కలు గుర్తించబడ్డాయి",
+        "app_desc": "AI ఉపయోగించి గోధుమ పంటలో కలుపు మొక్కల గుర్తింపు మరియు నివారణ"
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -360,7 +362,8 @@ TRANSLATIONS = {
         "urgency_label": "तत्काल",
         "action_label": "अनुशंसित कार्रवाई",
         "about_weed": "इस खरपतवार के बारे में",
-        "weeds_detected": "खरपतवार पाए गए"
+        "weeds_detected": "खरपतवार पाए गए",
+        "app_desc": "AI का उपयोग करके गेहूँ की फसल में खरपतवार की पहचान और रोकथाम"
     }
 }
 
@@ -897,11 +900,12 @@ st.sidebar.markdown(f"""
 # NAVIGATION
 st.sidebar.markdown(f"<h3 style='color: #8ac48a; font-size: 12px; text-transform: uppercase; margin-top: 0; margin-bottom: 12px;'>{t.get('nav_label', 'NAVIGATION')}</h3>", unsafe_allow_html=True)
 
-nav_options = [
-    ("🏠 Home", t.get("nav_home", "Home")),
-    ("🔍 Detect", t.get("nav_detect", "Detect")),
-    ("📚 Learn", t.get("nav_learn", "Learn"))
-]
+# Build translated navigation labels AFTER t is defined
+home_label = t.get("nav_home", "🏠 Home")
+detect_label = t.get("nav_detect", "🔍 Detect")
+learn_label = t.get("nav_learn", "📚 Learn")
+
+nav_options = [home_label, detect_label, learn_label]
 
 # Store current page in session state
 if 'current_page' not in st.session_state:
@@ -910,11 +914,11 @@ if 'current_page' not in st.session_state:
 menu_index = st.sidebar.radio(
     "Navigation",
     range(len(nav_options)),
-    format_func=lambda x: nav_options[x][0],
+    format_func=lambda x: nav_options[x],
     label_visibility="collapsed"
 )
 st.session_state['current_page'] = menu_index
-menu = nav_options[menu_index][1]
+menu = nav_options[menu_index]
 
 st.sidebar.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
 
@@ -942,7 +946,7 @@ def add_history(entry):
 
 
 ### HOME ###
-if t.get("nav_home","Home") in menu or menu == 'Home':
+if menu == home_label:
     # Page header with title and badge
     col_title, col_badge = st.columns([3, 1])
     with col_title:
@@ -1027,7 +1031,7 @@ if t.get("nav_home","Home") in menu or menu == 'Home':
 
 
 ### DETECT ###
-if t.get("nav_detect","Detect") in menu or menu == 'Detect':
+if menu == detect_label:
     # Page header
     st.markdown(f'<h1 class="page-title">{t.get("detect_weeds_title", "🔍 Detect Weeds")}</h1>', unsafe_allow_html=True)
     st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
@@ -1196,7 +1200,7 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
 
 
 ### LEARN ###
-if t.get("nav_learn","Learn") in menu or menu == 'Learn':
+if menu == learn_label:
     # Page header
     st.markdown(f'<h1 class="page-title">{t.get("learn_title", "📚 Learn — Weeds in Wheat Crops")}</h1>', unsafe_allow_html=True)
     st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
