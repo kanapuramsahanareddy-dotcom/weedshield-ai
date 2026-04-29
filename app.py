@@ -79,7 +79,6 @@ TRANSLATIONS = {
         "step2_desc": "Upload the image and click Run Detection for instant AI analysis",
         "step3_title": "Get Results",
         "step3_desc": "Receive personalized treatment recommendations based on detection results",
-        "season_badge": "Season: Rabi 2025",
         "latest_detection": "Latest Detection",
         "no_detections": "No detections yet",
         "field_clear": "Field Clear",
@@ -111,7 +110,24 @@ TRANSLATIONS = {
         "detect_weeds": "🔍 Detect Weeds",
         "home": "Home",
         "detect": "Detect",
-        "learn": "Learn"
+        "learn": "Learn",
+        "nav_label": "NAVIGATION",
+        "upload_formats": "200MB max • JPG, JPEG, PNG",
+        "treatment_title": "Treatment Recommendations",
+        "recommended_herbicides": "Recommended Herbicides",
+        "primary_herbicide": "Primary Herbicide",
+        "alternative_herbicides": "Alternative Herbicides",
+        "brand": "Brand",
+        "dosage": "Dosage",
+        "apply_at": "Apply at",
+        "manual_control": "Manual Control",
+        "prevention": "Prevention",
+        "cost_per_acre": "Cost per Acre",
+        "yield_loss": "Yield Loss if Untreated",
+        "severity_label": "Severity",
+        "urgency_label": "Urgency",
+        "action_label": "Recommended Action",
+        "about_weed": "About this Weed"
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -178,7 +194,6 @@ TRANSLATIONS = {
         "step2_desc": "చిత్రాన్ని అప్లోడ్ చేసి గుర్తింపు నడపండి",
         "step3_title": "ఫలితాలు పొందండి",
         "step3_desc": "చికిత్స సిఫార్సులు అందుకోండి",
-        "season_badge": "సీజన్: రబీ 2025",
         "latest_detection": "తాజా గుర్తింపు",
         "no_detections": "ఇంకా గుర్తింపులు లేవు",
         "field_clear": "ఖాళీ ఫీల్డ్",
@@ -210,7 +225,24 @@ TRANSLATIONS = {
         "detect_weeds": "🔍 కలుపు గుర్తించండి",
         "home": "హోమ్",
         "detect": "గుర్తించు",
-        "learn": "నేర్చుకోండి"
+        "learn": "నేర్చుకోండి",
+        "nav_label": "నావిగేషన్",
+        "upload_formats": "200MB గరిష్ఠం • JPG, JPEG, PNG",
+        "treatment_title": "చికిత్స సిఫార్సులు",
+        "recommended_herbicides": "సిఫార్సు చేయబడిన కలుపు మందులు",
+        "primary_herbicide": "ప్రధాన కలుపు మందు",
+        "alternative_herbicides": "ప్రత్యామ్నాయ కలుపు మందులు",
+        "brand": "బ్రాండ్",
+        "dosage": "ఖరీదు",
+        "apply_at": "దీనిపై ఆధారపడి ఉంటుంది",
+        "manual_control": "శారీరక నియంత్రణ",
+        "prevention": "నివారణ",
+        "cost_per_acre": "ఎకరకు ఖర్చు",
+        "yield_loss": "చికిత్స చేయకపోతే దిగుబడి నష్టం",
+        "severity_label": "తీవ్రత",
+        "urgency_label": "అత్యవసరత",
+        "action_label": "సిఫార్సు చేయిన చర్య",
+        "about_weed": "ఈ కలుపు మిళెను గురించి"
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -277,7 +309,6 @@ TRANSLATIONS = {
         "step2_desc": "छवि अपलोड करें और जांच चलाएं",
         "step3_title": "परिणाम पाएं",
         "step3_desc": "उपचार की सिफारिशें प्राप्त करें",
-        "season_badge": "मौसम: रबी 2025",
         "latest_detection": "नवीनतम जांच",
         "no_detections": "अभी तक कोई जांच नहीं",
         "field_clear": "खेत स्पष्ट",
@@ -309,7 +340,24 @@ TRANSLATIONS = {
         "detect_weeds": "🔍 खरपतवार पहचानें",
         "home": "होम",
         "detect": "पहचानें",
-        "learn": "सीखें"
+        "learn": "सीखें",
+        "nav_label": "नेविगेशन",
+        "upload_formats": "200MB अधिकतम • JPG, JPEG, PNG",
+        "treatment_title": "उपचार की सिफारिशें",
+        "recommended_herbicides": "अनुशंसित शाकनाशी",
+        "primary_herbicide": "प्राथमिक शाकनाशी",
+        "alternative_herbicides": "वैकल्पिक शाकनाशी",
+        "brand": "ब्रांड",
+        "dosage": "खुराक",
+        "apply_at": "इस पर लागू करें",
+        "manual_control": "मैनुअल नियंत्रण",
+        "prevention": "रोकथाम",
+        "cost_per_acre": "प्रति एकड़ लागत",
+        "yield_loss": "अनुपचारित होने पर उपज हानि",
+        "severity_label": "गंभीरता",
+        "urgency_label": "तत्काल",
+        "action_label": "अनुशंसित कार्रवाई",
+        "about_weed": "इस खरपतवार के बारे में"
     }
 }
 
@@ -897,7 +945,7 @@ if t.get("nav_home","Home") in menu or menu == 'Home':
     with col_title:
         st.markdown(f'<h1 class="page-title">{t.get("home_title", "🏠 Home")}</h1>', unsafe_allow_html=True)
     with col_badge:
-        st.markdown(f'<div class="season-badge">{t.get("season_badge", "Season: Rabi 2025")}</div>', unsafe_allow_html=True)
+        pass
     
     st.markdown("<hr style='margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
     

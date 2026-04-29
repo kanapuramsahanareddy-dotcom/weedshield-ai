@@ -29,6 +29,11 @@ WEED_TREATMENTS = {
         "herbicides": [
             {
                 "name": "Clodinafop-propargyl 15% WP",
+                "name_local": {
+                    "English": "Clodinafop-propargyl 15% WP",
+                    "Telugu (తెలుగు)": "క్లోడినాఫాప్-ప్రొపార్జిల్ 15% WP",
+                    "Hindi (हिंदी)": "क्लोडिनाफॉप-प्रोपार्जिल 15% WP"
+                },
                 "brand": "Topik",
                 "dosage": "160g/acre",
                 "timing": {
@@ -39,6 +44,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "Fenoxaprop-p-ethyl 9.3% EC",
+                "name_local": {
+                    "English": "Fenoxaprop-p-ethyl 9.3% EC",
+                    "Telugu (తెలుగు)": "ఫెనాక్సాప్రాప్-పి-ఇథైల్ 9.3% EC",
+                    "Hindi (हिंदी)": "फेनोक्साप्रोप-पी-एथिल 9.3% EC"
+                },
                 "brand": "Puma Super",
                 "dosage": "400ml/acre",
                 "timing": {
@@ -49,6 +59,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "Isoproturon 75% WP",
+                "name_local": {
+                    "English": "Isoproturon 75% WP",
+                    "Telugu (తెలుగు)": "ఐసోప్రొట్యూరాన్ 75% WP",
+                    "Hindi (हिंदी)": "आइसोप्रोट्यूरॉन 75% WP"
+                },
                 "brand": "Arelon",
                 "dosage": "1kg/acre",
                 "timing": {
@@ -85,6 +100,11 @@ WEED_TREATMENTS = {
         "herbicides": [
             {
                 "name": "Metsulfuron-methyl 20% WP",
+                "name_local": {
+                    "English": "Metsulfuron-methyl 20% WP",
+                    "Telugu (తెలుగు)": "మెట్సల్ఫ్యూరాన్-మిథైల్ 20% WP",
+                    "Hindi (हिंदी)": "मेट्सल्फ्यूरॉन-मिथाइल 20% WP"
+                },
                 "brand": "Algrip",
                 "dosage": "8g/acre",
                 "timing": {
@@ -95,6 +115,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "2,4-D Amine Salt 58% SL",
+                "name_local": {
+                    "English": "2,4-D Amine Salt 58% SL",
+                    "Telugu (తెలుగు)": "2,4-డి అమైన్ సాల్ట్ 58% SL",
+                    "Hindi (हिंदी)": "2,4-डी अमाइन साल्ट 58% SL"
+                },
                 "brand": "Fernoxone",
                 "dosage": "500ml/acre",
                 "timing": {
@@ -105,6 +130,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "Carfentrazone-ethyl 40% DF",
+                "name_local": {
+                    "English": "Carfentrazone-ethyl 40% DF",
+                    "Telugu (తెలుగు)": "కార్ఫెంట్రాజోన్-ఇథైల్ 40% DF",
+                    "Hindi (हिंदी)": "कार्फेंट्राजोन-एथिल 40% DF"
+                },
                 "brand": "Affinity",
                 "dosage": "20g/acre",
                 "timing": {
@@ -141,6 +171,11 @@ WEED_TREATMENTS = {
         "herbicides": [
             {
                 "name": "Fenoxaprop-p-ethyl 9.3% EC",
+                "name_local": {
+                    "English": "Fenoxaprop-p-ethyl 9.3% EC",
+                    "Telugu (తెలుగు)": "ఫెనాక్సాప్రాప్-పి-ఇథైల్ 9.3% EC",
+                    "Hindi (हिंदी)": "फेनोक्साप्रोप-पी-एथिल 9.3% EC"
+                },
                 "brand": "Puma Super",
                 "dosage": "400ml/acre",
                 "timing": {
@@ -151,6 +186,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "Clodinafop + Metsulfuron",
+                "name_local": {
+                    "English": "Clodinafop + Metsulfuron",
+                    "Telugu (తెలుగు)": "క్లోడినాఫాప్ + మెట్సల్ఫ్యూరాన్",
+                    "Hindi (हिंदी)": "क्लोडिनाफॉप + मेट्सल्फ्यूरॉन"
+                },
                 "brand": "Clodex Plus",
                 "dosage": "160g/acre",
                 "timing": {
@@ -187,6 +227,11 @@ WEED_TREATMENTS = {
         "herbicides": [
             {
                 "name": "2,4-D Amine Salt 58% SL",
+                "name_local": {
+                    "English": "2,4-D Amine Salt 58% SL",
+                    "Telugu (తెలుగు)": "2,4-డి అమైన్ సాల్ట్ 58% SL",
+                    "Hindi (हिंदी)": "2,4-डी अमाइन साल्ट 58% SL"
+                },
                 "brand": "Fernoxone",
                 "dosage": "600ml/acre",
                 "timing": {
@@ -197,6 +242,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "Metsulfuron-methyl 20% WP",
+                "name_local": {
+                    "English": "Metsulfuron-methyl 20% WP",
+                    "Telugu (తెలుగు)": "మెట్సల్ఫ్యూరాన్-మిథైల్ 20% WP",
+                    "Hindi (हिंदी)": "मेट्सल्फ्यूरॉन-मिथाइल 20% WP"
+                },
                 "brand": "Algrip",
                 "dosage": "10g/acre",
                 "timing": {
@@ -233,6 +283,11 @@ WEED_TREATMENTS = {
         "herbicides": [
             {
                 "name": "Isoproturon 75% WP",
+                "name_local": {
+                    "English": "Isoproturon 75% WP",
+                    "Telugu (తెలుగు)": "ఐసోప్రొట్యూరాన్ 75% WP",
+                    "Hindi (हिंदी)": "आइसोप्रोट्यूरॉन 75% WP"
+                },
                 "brand": "Arelon",
                 "dosage": "1kg/acre",
                 "timing": {
@@ -243,6 +298,11 @@ WEED_TREATMENTS = {
             },
             {
                 "name": "Sulfosulfuron 75% WG",
+                "name_local": {
+                    "English": "Sulfosulfuron 75% WG",
+                    "Telugu (తెలుగు)": "సల్ఫోసల్ఫ్యూరాన్ 75% WG",
+                    "Hindi (हिंदी)": "सल्फोसल्फ्यूरॉन 75% WG"
+                },
                 "brand": "Leader",
                 "dosage": "13.5g/acre",
                 "timing": {
@@ -289,7 +349,7 @@ def get_weed_treatment(weed_type, confidence, language="English"):
         "prevention": treatment["prevention"][lang],
         "herbicides": [
             {
-                "name": h["name"],
+                "name": h["name_local"][lang],
                 "brand": h["brand"],
                 "dosage": h["dosage"],
                 "timing": h["timing"][lang]
@@ -301,17 +361,35 @@ def get_weed_treatment(weed_type, confidence, language="English"):
     }
 
 
-def get_severity(confidence):
+def get_severity(confidence, language="English"):
     """
     Determine severity level and urgency based on confidence score.
-    Returns: (severity_level, color, urgency_message)
+    Returns: (severity_level, text_color, bg_color, urgency_message)
     """
+    SEVERITY_TEXT = {
+        "English": {
+            "LOW": ("LOW", "#558b2f", "#f1f8e9", "Monitor field every 3-4 days"),
+            "MEDIUM": ("MEDIUM", "#e65100", "#fff3e0", "Apply treatment within 3-5 days"),
+            "HIGH": ("HIGH", "#c62828", "#ffebee", "Immediate treatment within 24 hours")
+        },
+        "Telugu (తెలుగు)": {
+            "LOW": ("తక్కువ", "#558b2f", "#f1f8e9", "ప్రతి 3-4 రోజులకు పొలాన్ని పర్యవేక్షించండి"),
+            "MEDIUM": ("మధ్యస్థం", "#e65100", "#fff3e0", "3-5 రోజుల్లో చికిత్స చేయండి"),
+            "HIGH": ("అధిక", "#c62828", "#ffebee", "24 గంటల్లో వెంటనే చికిత్స అవసరం")
+        },
+        "Hindi (हिंदी)": {
+            "LOW": ("कम", "#558b2f", "#f1f8e9", "हर 3-4 दिन में खेत की निगरानी करें"),
+            "MEDIUM": ("मध्यम", "#e65100", "#fff3e0", "3-5 दिनों में उपचार करें"),
+            "HIGH": ("उच्च", "#c62828", "#ffebee", "24 घंटे में तुरंत उपचार करें")
+        }
+    }
+    lang_data = SEVERITY_TEXT.get(language, SEVERITY_TEXT["English"])
     if confidence < 0.50:
-        return "LOW", "yellow", "Monitor field every 3-4 days"
+        return lang_data["LOW"]
     elif confidence < 0.75:
-        return "MEDIUM", "orange", "Apply treatment within 3-5 days"
+        return lang_data["MEDIUM"]
     else:
-        return "HIGH", "red", "Immediate treatment required within 24 hours"
+        return lang_data["HIGH"]
 
 
 def format_recommendation(weed_type, confidence, language="English"):
@@ -320,13 +398,22 @@ def format_recommendation(weed_type, confidence, language="English"):
     Returns dictionary with all treatment information in specified language.
     """
     treatment = get_weed_treatment(weed_type, confidence, language)
-    severity, color, urgency = get_severity(confidence)
+    severity_text, color, bg_color, urgency = get_severity(confidence, language)
+    
+    ACTION_TEMPLATE = {
+        "English": f"Treat with {treatment['herbicides'][0]['name']}",
+        "Telugu (తెలుగు)": f"{treatment['herbicides'][0]['name']} తో చికిత్స చేయండి",
+        "Hindi (हिंदी)": f"{treatment['herbicides'][0]['name']} से उपचार करें"
+    }
+    action = ACTION_TEMPLATE.get(language, ACTION_TEMPLATE["English"])
     
     return {
         "weed_name": treatment["common_name"],
-        "severity": severity,
+        "severity": severity_text,
         "color": color,
+        "bg_color": bg_color,
         "urgency": urgency,
+        "action": action,
         "description": treatment["description"],
         "primary_herbicide": treatment["herbicides"][0],
         "all_herbicides": treatment["herbicides"],
@@ -347,11 +434,17 @@ def get_recommendation(weed_type, confidence=0.8, language="English"):
     # Map to app.py expected format
     return {
         "severity": rec["severity"],
+        "color": rec["color"],
+        "bg_color": rec["bg_color"],
         "confidence_range": f"{confidence*100:.0f}%-{(confidence+0.1)*100:.0f}%" if confidence < 1 else "80%-100%",
-        "action": f"Treat with {rec['primary_herbicide']['name']}" if rec.get("primary_herbicide") else "Monitor field",
+        "action": rec["action"],
         "description": rec["description"],
+        "manual_control": rec["manual_control"],
+        "prevention": rec["prevention"],
         "methods": [rec["manual_control"], rec["prevention"]],
         "herbicides": [h["name"] for h in rec.get("all_herbicides", [])],
+        "all_herbicides": rec["all_herbicides"],
         "urgency": rec["urgency"],
-        "cost_impact": rec["cost_per_acre"]
+        "cost_impact": rec["cost_per_acre"],
+        "yield_loss": rec["yield_loss"]
     }
