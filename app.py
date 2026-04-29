@@ -1021,7 +1021,7 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
                     severity_level, severity_conf, severity_icon = calculate_severity(weed_count, weed_confidences)
                     
                     avg_weed_confidence = np.mean(weed_confidences) if weed_confidences else 0.0
-                    treatment_info = format_recommendation("general_weed", avg_weed_confidence)
+                    treatment_info = format_recommendation("general_weed", avg_weed_confidence, language)
 
                     pdf_data = generate_pdf_report(img_annotated, weed_count, wheat_count, 
                                                   treatment_info.get('severity', 'LOW'), '📊',
