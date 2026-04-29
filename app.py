@@ -127,7 +127,8 @@ TRANSLATIONS = {
         "severity_label": "Severity",
         "urgency_label": "Urgency",
         "action_label": "Recommended Action",
-        "about_weed": "About this Weed"
+        "about_weed": "About this Weed",
+        "weeds_detected": "weeds detected"
     },
     "Telugu (తెలుగు)": {
         "title": "వీడ్‌షీల్డ్ AI",
@@ -242,7 +243,8 @@ TRANSLATIONS = {
         "severity_label": "తీవ్రత",
         "urgency_label": "అత్యవసరత",
         "action_label": "సిఫార్సు చేయిన చర్య",
-        "about_weed": "ఈ కలుపు మిళెను గురించి"
+        "about_weed": "ఈ కలుపు మిళెను గురించి",
+        "weeds_detected": "కలుపు మొక్కలు గుర్తించబడ్డాయి"
     },
     "Hindi (हिंदी)": {
         "title": "वीडशील्ड AI",
@@ -357,7 +359,8 @@ TRANSLATIONS = {
         "severity_label": "गंभीरता",
         "urgency_label": "तत्काल",
         "action_label": "अनुशंसित कार्रवाई",
-        "about_weed": "इस खरपतवार के बारे में"
+        "about_weed": "इस खरपतवार के बारे में",
+        "weeds_detected": "खरपतवार पाए गए"
     }
 }
 
@@ -883,16 +886,16 @@ except Exception as e:
 
 
 # SIDEBAR HEADER - Logo area
-st.sidebar.markdown("""
+st.sidebar.markdown(f"""
 <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #3a5a3a; margin-bottom: 20px;">
     <h1 style="font-size: 28px; margin: 0 0 8px 0;">🌾</h1>
     <h2 style="font-size: 20px; margin: 0; color: #a8d5a8;">WeedShield AI</h2>
-    <p style="font-size: 12px; color: #8ac48a; margin: 4px 0 0 0;">Wheat Weed Detection</p>
+    <p style="font-size: 12px; color: #8ac48a; margin: 4px 0 0 0;">{t.get('subtitle', 'Wheat Weed Detection')}</p>
 </div>
 """, unsafe_allow_html=True)
 
 # NAVIGATION
-st.sidebar.markdown("<h3 style='color: #8ac48a; font-size: 12px; text-transform: uppercase; margin-top: 0; margin-bottom: 12px;'>Navigation</h3>", unsafe_allow_html=True)
+st.sidebar.markdown(f"<h3 style='color: #8ac48a; font-size: 12px; text-transform: uppercase; margin-top: 0; margin-bottom: 12px;'>{t.get('nav_label', 'NAVIGATION')}</h3>", unsafe_allow_html=True)
 
 nav_options = [
     ("🏠 Home", t.get("nav_home", "Home")),
@@ -1097,7 +1100,7 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
         if 'latest_result' in st.session_state:
             result = st.session_state['latest_result']
             if result['weed_count'] > 0:
-                st.markdown(f"<span style='color: #c62828; font-weight: bold;'>⚠️ {result['weed_count']} weed{'s' if result['weed_count'] != 1 else ''} detected</span>", unsafe_allow_html=True)
+                st.markdown(f"<span style='color: #c62828; font-weight: bold;'>⚠️ {result['weed_count']} {t.get('weeds_detected', 'weeds detected')}</span>", unsafe_allow_html=True)
             else:
                 st.markdown(f"<span style='color: #2e7d32; font-weight: bold;'>✅ {t.get('field_clear', 'Field Clear')}</span>", unsafe_allow_html=True)
             
@@ -1141,32 +1144,43 @@ if t.get("nav_detect","Detect") in menu or menu == 'Detect':
         # Treatment recommendations if weeds detected
         if result['weed_count'] > 0:
             st.markdown("<hr style='margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-            st.markdown("<h3 style='color: #2a4d2a;'>Treatment Recommendations</h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='color: #2a4d2a;'>🌿 {t.get('treatment_title', 'Treatment Recommendations')}</h3>", unsafe_allow_html=True)
             
             st.markdown('<div class="white-card">', unsafe_allow_html=True)
             
-            severity_colors = {
-                "LOW": "#4CAF50",
-                "MEDIUM": "#FF9800",
-                "HIGH": "#f44336"
-            }
-            severity_color = severity_colors.get(result['treatment'].get('severity', 'LOW'), "#666666")
+            # Severity badge
+            severity_bg = result['treatment'].get('bg_color', '#f1f8e9')
+            severity_color = result['treatment'].get('color', '#558b2f')
+            st.markdown(f"<div style='background:{severity_bg}; border-left:4px solid {severity_color}; border-radius:8px; padding:12px 16px; margin-bottom:16px;'><strong style='color:{severity_color};'>{t.get('severity_label', 'Severity')}:</strong> <span style='color:{severity_color}; font-weight:bold;'>{result['treatment'].get('severity', 'LOW')}</span></div>", unsafe_allow_html=True)
             
-            st.markdown(f"**Severity:** <span style='color: {severity_color}; font-weight: bold;'>{result['treatment'].get('severity', 'LOW')}</span>", unsafe_allow_html=True)
-            st.markdown(f"**Action:** {result['treatment'].get('action', 'Monitor field')}")
-            st.markdown(f"**Description:** {result['treatment'].get('description', 'N/A')}")
+            # Action
+            st.markdown(f"**{t.get('action_label', 'Action')}:** {result['treatment'].get('action', 'Monitor field')}")
             
-            if result['treatment'].get('methods'):
-                st.markdown("**Recommended Methods:**")
-                for method in result['treatment'].get('methods', []):
-                    st.markdown(f"• {method}")
+            # Description
+            st.markdown(f"**{t.get('about_weed', 'About this Weed')}:** {result['treatment'].get('description', 'N/A')}")
             
-            if result['treatment'].get('all_herbicides'):
-                st.markdown("**Recommended Herbicides:**")
-                for herbicide in result['treatment'].get('all_herbicides', []):
-                    st.markdown(f"• {herbicide}")
+            # Urgency
+            st.markdown(f"**{t.get('urgency_label', 'Urgency')}:** {result['treatment'].get('urgency', 'N/A')}")
             
-            st.markdown(f"**Urgency:** {result['treatment'].get('urgency', 'N/A')}")
+            # Herbicides with proper formatting
+            st.markdown(f"<hr style='margin:16px 0; border:none; border-top:1px solid #e0e0e0;'>", unsafe_allow_html=True)
+            st.markdown(f"**🧪 {t.get('recommended_herbicides', 'Recommended Herbicides')}**")
+            
+            rec = result['treatment']
+            for i, herb in enumerate(rec.get('all_herbicides', [])):
+                label = t.get('primary_herbicide', 'Primary Herbicide') if i == 0 else t.get('alternative_herbicides', 'Alternative Herbicides')
+                st.markdown(f"""
+                <div style="background:#f1f8e9; border-left:4px solid #4caf50; border-radius:8px; padding:12px 16px; margin-bottom:8px;">
+                  <div style="font-size:11px; color:#777; margin-bottom:4px;">{label}</div>
+                  <div style="font-weight:600; font-size:14px; color:#1b5e20;">{herb['name']}</div>
+                  <div style="font-size:13px; color:#555; margin-top:4px;">
+                    {t.get('brand', 'Brand')}: <b>{herb['brand']}</b> &nbsp;|&nbsp;
+                    {t.get('dosage', 'Dosage')}: <b>{herb['dosage']}</b> &nbsp;|&nbsp;
+                    {t.get('apply_at', 'Apply at')}: <b>{herb['timing']}</b>
+                  </div>
+                </div>
+                """, unsafe_allow_html=True)
+            
             st.markdown('</div>', unsafe_allow_html=True)
         
         # Add to history
